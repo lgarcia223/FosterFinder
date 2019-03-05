@@ -5,6 +5,16 @@ VisualStudioVersion = 15.0.28307.329
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FosterFinder.WebMVC", "FosterFinder.WebMVC\FosterFinder.WebMVC.csproj", "{493767BC-86C5-4002-9FE4-C3CACCA72F49}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FosterFinder.Data", "FosterFinder.Data\FosterFinder.Data.csproj", "{9C5B775C-2096-42FC-9A81-955A9FE8091F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FosterFinder.Models", "FosterFinder.Models\FosterFinder.Models.csproj", "{5F321495-BA4F-48CD-B3AA-70FA981D8A12}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FosterFinder.Contracts", "FosterFinder.Contracts\FosterFinder.Contracts.csproj", "{B19DD94F-A18C-45EE-B402-102AE2DA309A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FosterFinder.Services", "FosterFinder.Services\FosterFinder.Services.csproj", "{ECE6DF78-CC09-4E47-8C70-185E44DB7360}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FosterFinder.Tests", "FosterFinder.Tests\FosterFinder.Tests.csproj", "{250FFFCF-DFEF-4C13-86A9-589C3D28A023}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +25,26 @@ Global
 		{493767BC-86C5-4002-9FE4-C3CACCA72F49}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{493767BC-86C5-4002-9FE4-C3CACCA72F49}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{493767BC-86C5-4002-9FE4-C3CACCA72F49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C5B775C-2096-42FC-9A81-955A9FE8091F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C5B775C-2096-42FC-9A81-955A9FE8091F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C5B775C-2096-42FC-9A81-955A9FE8091F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C5B775C-2096-42FC-9A81-955A9FE8091F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F321495-BA4F-48CD-B3AA-70FA981D8A12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F321495-BA4F-48CD-B3AA-70FA981D8A12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F321495-BA4F-48CD-B3AA-70FA981D8A12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F321495-BA4F-48CD-B3AA-70FA981D8A12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B19DD94F-A18C-45EE-B402-102AE2DA309A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B19DD94F-A18C-45EE-B402-102AE2DA309A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B19DD94F-A18C-45EE-B402-102AE2DA309A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B19DD94F-A18C-45EE-B402-102AE2DA309A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECE6DF78-CC09-4E47-8C70-185E44DB7360}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECE6DF78-CC09-4E47-8C70-185E44DB7360}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECE6DF78-CC09-4E47-8C70-185E44DB7360}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECE6DF78-CC09-4E47-8C70-185E44DB7360}.Release|Any CPU.Build.0 = Release|Any CPU
+		{250FFFCF-DFEF-4C13-86A9-589C3D28A023}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{250FFFCF-DFEF-4C13-86A9-589C3D28A023}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{250FFFCF-DFEF-4C13-86A9-589C3D28A023}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{250FFFCF-DFEF-4C13-86A9-589C3D28A023}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

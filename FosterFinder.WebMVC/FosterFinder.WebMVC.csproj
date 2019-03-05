@@ -180,7 +180,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -257,6 +256,20 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FosterFinder.Data\FosterFinder.Data.csproj">
+      <Project>{9c5b775c-2096-42fc-9a81-955a9fe8091f}</Project>
+      <Name>FosterFinder.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FosterFinder.Models\FosterFinder.Models.csproj">
+      <Project>{5f321495-ba4f-48cd-b3aa-70fa981d8a12}</Project>
+      <Name>FosterFinder.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FosterFinder.Services\FosterFinder.Services.csproj">
+      <Project>{ece6df78-cc09-4e47-8c70-185e44db7360}</Project>
+      <Name>FosterFinder.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
