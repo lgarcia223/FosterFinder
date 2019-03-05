@@ -31,7 +31,8 @@ namespace FosterFinder.Data
         {
             return new ApplicationDbContext();
         }
-        public DbSet<Finder> Finders { get; set; }
+        public DbSet<FosterHome> Homes { get; set; }
+        public DbSet<Child> Children { get; set;  }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder
