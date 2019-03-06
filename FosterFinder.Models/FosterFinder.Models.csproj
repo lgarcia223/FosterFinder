@@ -54,6 +54,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChildCreate.cs" />
+    <Compile Include="ChildListItem.cs" />
     <Compile Include="FosterHomeCreate.cs" />
     <Compile Include="FosterHomeListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

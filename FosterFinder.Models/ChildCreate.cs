@@ -5,16 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FosterFinder.Data
+namespace FosterFinder.Models
 {
-    public enum ChildGender { Male, Female, Other}
-
-    public class Child
+    public class ChildCreate
     {
-        [Key]
-        public int ChidId { get; set; }
-        [Required]
-        public Guid UserId { get; set; }
         [Required]
         [Display(Name = "Child's Name")]
         public string ChildName { get; set; }
@@ -23,15 +17,16 @@ namespace FosterFinder.Data
         public int BedsNeed { get; set; }
         [Required]
         [Display(Name = "Gender")]
-        public ChildGender ChildGender;
+        public ChildGender ChildGender { get; set; }
         [Required]
         [Display(Name = "Child's Age")]
         [Range(0, 18, ErrorMessage = "Please choose a number between 0 and 18")]
-        public double ChildAge;
+        public double ChildAge { get; set; }
         [Display(Name = "School District")]
         public string SchoolDistNeed { get; set; }
         public string Comments { get; set; }
 
-        public DateTimeOffset? ModifiedUtc { get; set;}
+        public DateTimeOffset? ModifiedUtc { get; set; }
+
     }
 }

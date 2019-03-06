@@ -1,7 +1,75 @@
-﻿
+﻿@model IEnumerable<FosterFinder.Models.FosterHomeListItem>
+
 @{
     ViewBag.Title = "FosterHomeIndex";
 }
 
-<h2>FosterHomeIndex</h2>
+<h2>Foster Home Openings</h2>
 
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FamilyName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OpenBeds)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.genderpref)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AgePrefMin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AgePrefMax)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SchoolDistrict)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Comments)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ModifiedUtc)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FamilyName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OpenBeds)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.genderpref)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AgePrefMin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AgePrefMax)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SchoolDistrict)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Comments)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ModifiedUtc)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>
