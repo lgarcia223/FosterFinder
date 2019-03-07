@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FosterFinder.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -7,7 +8,6 @@ using System.Threading.Tasks;
 
 namespace FosterFinder.Models
 {
-    public enum ChildGender { Male, Female, Other };
 
     public class ChildListItem
     {
@@ -25,6 +25,6 @@ namespace FosterFinder.Models
         public string SchoolDistNeed { get; set; }
         public string Comments { get; set; }
 
-        public DateTimeOffset CreatedUtc { get; set; }
+        public DateTimeOffset? ModifiedUtc { get; set; }
     }
 }

@@ -54,11 +54,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChildService.cs" />
+    <Compile Include="FosterHomeService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FosterFinder.Data\FosterFinder.Data.csproj">
+      <Project>{9c5b775c-2096-42fc-9a81-955a9fe8091f}</Project>
+      <Name>FosterFinder.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FosterFinder.Models\FosterFinder.Models.csproj">
+      <Project>{5f321495-ba4f-48cd-b3aa-70fa981d8a12}</Project>
+      <Name>FosterFinder.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

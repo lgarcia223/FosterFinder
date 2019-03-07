@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System.Collections.Generic;
+using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Security.Claims;
@@ -33,6 +34,8 @@ namespace FosterFinder.Data
         }
         public DbSet<FosterHome> Homes { get; set; }
         public DbSet<Child> Children { get; set;  }
+        public IEnumerable<object> Notes { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder

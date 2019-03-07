@@ -19,7 +19,7 @@ namespace FosterFinder.Models
         public int OpenBeds { get; set; }
         [Required]
         [Display(Name = "Gender Preference")]
-        public GenderPref genderpref { get; set; }
+        public GenderPref genderPref { get; set; }
         [Required]
         [Display(Name = "Minimum Age Preference")]
         [Range(0, 18, ErrorMessage = "Please choose a number between 0 and 18")]

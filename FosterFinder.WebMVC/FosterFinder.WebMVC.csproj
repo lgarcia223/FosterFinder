@@ -242,10 +242,10 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\FosterHome\FosterHomeCreate.cshtml" />
-    <Content Include="Views\Child\ChildIndex.cshtml" />
-    <Content Include="Views\FosterHome\FosterHomeIndex.cshtml" />
-    <Content Include="Views\Child\ChildCreate.cshtml" />
+    <Content Include="Views\FosterHome\Create.cshtml" />
+    <Content Include="Views\Child\Index.cshtml" />
+    <Content Include="Views\FosterHome\Index.cshtml" />
+    <Content Include="Views\Child\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

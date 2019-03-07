@@ -1,4 +1,6 @@
 ﻿using FosterFinder.Models;
+using FosterFinder.Services;
+using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,12 +13,15 @@ namespace FosterFinder.WebMVC.Controllers
     {
         [Authorize] 
         // GET: Child
-        public ActionResult ChildIndex()
+        public ActionResult Index()
         {
-            var model = new ChildListItem[0];
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new ChildService(userId);
+            var model = service.GetChildren();
+
             return View(model);
         }
-        public ActionResult ChildCreate()
+        public ActionResult Create()
         {
             return View();
         }
@@ -24,11 +29,23 @@ namespace FosterFinder.WebMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(ChildCreate model)
         {
-            if(ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-
+                return View(model);
             }
-            return View(model);
+
+            ChildService service = CreateChildService();
+
+            service.CreateChild(model);
+
+            return RedirectToAction("Index");
+        }
+
+        private ChildService CreateChildService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new ChildService(userId);
+            return service;
         }
     }
 }

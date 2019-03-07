@@ -1,4 +1,6 @@
 ﻿using FosterFinder.Models;
+using FosterFinder.Services;
+using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,12 +13,15 @@ namespace FosterFinder.WebMVC.Controllers
     public class FosterHomeController : Controller
     {
         // GET: FosterHome
-        public ActionResult FosterHomeIndex()
+        public ActionResult Index()
         {
-            var model = new FosterHomeListItem[0];
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new FosterHomeService(userId);
+            var model = service.GetFosterHomes();
+
             return View(model);
         }
-        public ActionResult FosterHomeCreate()
+        public ActionResult Create()
         {
             return View();
         }
@@ -24,11 +29,23 @@ namespace FosterFinder.WebMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(FosterHomeCreate model)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-
+                return View(model);
             }
-            return View(model);
+
+            FosterHomeService service = CreateFosterHomeService();
+
+            service.CreateFosterHome(model);
+
+            return RedirectToAction("Index");
+        }
+
+        private FosterHomeService CreateFosterHomeService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new FosterHomeService(userId);
+            return service;
         }
     }
 }

@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace FosterFinder.Data
 {
-    public enum ChildGender { Male, Female, Other}
+    public enum ChildGender { Male, Female, Other };
 
     public class Child
     {
         [Key]
-        public int ChidId { get; set; }
+        public int ChildId { get; set; }
         [Required]
         public Guid UserId { get; set; }
         [Required]
@@ -23,15 +23,15 @@ namespace FosterFinder.Data
         public int BedsNeed { get; set; }
         [Required]
         [Display(Name = "Gender")]
-        public ChildGender ChildGender;
+        public ChildGender ChildGender { get; set; }
         [Required]
         [Display(Name = "Child's Age")]
         [Range(0, 18, ErrorMessage = "Please choose a number between 0 and 18")]
-        public double ChildAge;
+        public double ChildAge { get; set; }
         [Display(Name = "School District")]
         public string SchoolDistNeed { get; set; }
         public string Comments { get; set; }
 
-        public DateTimeOffset? ModifiedUtc { get; set;}
+        public DateTimeOffset? ModifiedUtc { get; set; }
     }
 }
