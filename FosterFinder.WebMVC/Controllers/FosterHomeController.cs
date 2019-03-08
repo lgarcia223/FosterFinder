@@ -29,14 +29,86 @@ namespace FosterFinder.WebMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(FosterHomeCreate model)
         {
-            if (!ModelState.IsValid)
+            if (!ModelState.IsValid) return View(model);
+
+            var service = CreateFosterHomeService();
+
+            if (service.CreateFosterHome(model))
             {
+                TempData["SaveResult"] = "The Foster Home was created.";
+                return RedirectToAction("Index");
+            }
+            ModelState.AddModelError("", "Foster Home could not be created.");
+
+            return View(model);
+        }
+        
+        public ActionResult Details(int id)
+        {
+            var svc = CreateFosterHomeService();
+            var model = svc.GetHomeById(id);
+
+            return View(model);
+        }
+
+        public ActionResult Edit(int id)
+        {
+            var service = CreateFosterHomeService();
+            var detail = service.GetHomeById(id);
+            var model =
+                new FosterHomeEdit
+                {
+                    HomeId = detail.HomeId,
+                    FamilyName = detail.FamilyName,
+                    OpenBeds = detail.OpenBeds,
+                    GenderPref = detail.GenderPref,
+                    AgePrefMin = detail.AgePrefMin,
+                    AgePrefMax = detail.AgePrefMax,
+                    SchoolDistrict = detail.SchoolDistrict,
+                    Comments = detail.Comments
+                };
+                return View(model);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, FosterHomeEdit model)
+        {
+            if (!ModelState.IsValid) return View(model);
+
+            if(model.HomeId !=id)
+            {
+                ModelState.AddModelError("", "Id Mismatch");
                 return View(model);
             }
 
-            FosterHomeService service = CreateFosterHomeService();
+            var service = CreateFosterHomeService();
 
-            service.CreateFosterHome(model);
+            if (service.UpdateFosterHome(model))
+            {
+                TempData["SaveResult"] = "The Foster Home was updated.";
+                return RedirectToAction("Index");
+            }
+            ModelState.AddModelError("", "The Foster Home could not be updated.");
+            return View();
+        }
+
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+            var svc = CreateFosterHomeService();
+            var model = svc.GetHomeById(id);
+
+            return View(model);
+        }
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeletePost(int id)
+        {
+            var service = CreateFosterHomeService();
+
+            service.DeleteHome(id);
+            TempData["SaveResult"] = "Your note was deleted";
 
             return RedirectToAction("Index");
         }

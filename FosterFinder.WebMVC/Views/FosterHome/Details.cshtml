@@ -1,0 +1,89 @@
+﻿@model FosterFinder.Models.FosterHomeDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>FosterHomeDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.HomeId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HomeId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FamilyName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FamilyName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OpenBeds)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OpenBeds)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.GenderPref)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GenderPref)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AgePrefMin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AgePrefMin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AgePrefMax)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AgePrefMax)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SchoolDistrict)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SchoolDistrict)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Comments)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Comments)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModifiedUtc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModifiedUtc)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.HomeId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -44,22 +44,65 @@ namespace FosterFinder.Services
                 var query = ctx
                     .Children
                     .Select(e =>
-                    new ChildListItem
-                    {
-                        ChildId = e.ChildId,
-                        ChildName = e.ChildName,
-                        BedsNeed = e.BedsNeed,
-                        ChildGender = e.ChildGender,
-                        ChildAge = e.ChildAge,
-                        SchoolDistNeed = e.SchoolDistNeed,
-                        Comments = e.Comments,
+                        new ChildListItem
+                        {
+                            ChildId = e.ChildId,
+                            ChildName = e.ChildName,
+                            BedsNeed = e.BedsNeed,
+                            ChildGender = e.ChildGender,
+                            ChildAge = e.ChildAge,
+                            SchoolDistNeed = e.SchoolDistNeed,
+                            Comments = e.Comments,
 
-                        ModifiedUtc = e.ModifiedUtc
-                    }
+                            ModifiedUtc = e.ModifiedUtc
+                        }
                 );
                 return query.ToArray();
             }
         }
+        public ChildDetail GetChildById(int childId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Children
+                    .Single(e => e.ChildId == childId);
+                return
+                    new ChildDetail
+                    {
+                        ChildId = entity.ChildId,
+                        ChildName = entity.ChildName,
+                        BedsNeed = entity.BedsNeed,
+                        ChildGender = entity.ChildGender,
+                        ChildAge = entity.ChildAge,
+                        SchoolDistNeed = entity.SchoolDistNeed,
+                        Comments = entity.Comments,
 
+                        ModifiedUtc = entity.ModifiedUtc
+                    };
+            }
+        }
+        public bool UpdateChild(ChildEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Children
+                    .Single(e => e.ChildId == model.ChildId);
+
+                entity.ChildId = model.ChildId;
+                entity.ChildName = model.ChildName;
+                entity.BedsNeed = model.BedsNeed;
+                entity.ChildGender = model.ChildGender;
+                entity.ChildAge = model.ChildAge;
+                entity.SchoolDistNeed = model.SchoolDistNeed;
+                entity.Comments = model.Comments;
+                entity.ModifiedUtc = model.ModifiedUtc;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }

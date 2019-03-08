@@ -9,6 +9,17 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+@if (TempData.ContainsKey("SaveResult"))
+{
+    <div class="alert alert-success fade in" role="alert">
+        @ViewBag.SaveResult
+        <button type="button" class="close" data-dismiss="alert">
+            <span>&times;</span>
+        </button>
+        @TempData["SaveResult"]
+    </div>
+}
+
 <table class="table">
     <tr>
         <th>
@@ -18,7 +29,7 @@
             @Html.DisplayNameFor(model => model.OpenBeds)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.genderpref)
+            @Html.DisplayNameFor(model => model.GenderPref)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.AgePrefMin)
@@ -38,38 +49,39 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.FamilyName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.OpenBeds)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.genderpref)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AgePrefMin)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AgePrefMax)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SchoolDistrict)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Comments)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ModifiedUtc)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FamilyName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OpenBeds)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GenderPref)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AgePrefMin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AgePrefMax)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SchoolDistrict)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Comments)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ModifiedUtc)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.HomeId}) |
+                @Html.ActionLink("Details", "Details", new { id=item.HomeId }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.HomeId })
+            </td>
+        </tr>
+    }
 
 </table>

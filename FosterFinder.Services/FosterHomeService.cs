@@ -21,11 +21,11 @@ namespace FosterFinder.Services
         {
             var entity = new FosterHome()
             {
-                UserId = _userId,
+                HomeId = model.HomeId,
                 FamilyName = model.FamilyName,
                 OpenBeds = model.OpenBeds,
                 GenderPref = model.genderPref,
-                AgePrefMin = model.AgePrefMax,
+                AgePrefMin = model.AgePrefMin,
                 AgePrefMax = model.AgePrefMax,
                 SchoolDistrict = model.SchoolDistrict,
                 Comments = model.Comments,
@@ -63,6 +63,68 @@ namespace FosterFinder.Services
 
             }
         }
+        public FosterHomeDetail GetHomeById(int HomeId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Homes
+                    .Single(e => e.HomeId == HomeId);
+                return
+                    new FosterHomeDetail
+                    {
+                        HomeId = entity.HomeId,
+                        FamilyName = entity.FamilyName,
+                        OpenBeds = entity.OpenBeds,
+                        GenderPref = entity.GenderPref,
+                        AgePrefMin = entity.AgePrefMin,
+                        AgePrefMax = entity.AgePrefMax,
+                        SchoolDistrict = entity.SchoolDistrict,
+                        Comments = entity.Comments,
 
+                        ModifiedUtc = entity.ModifiedUtc
+
+                    };
+            }
+
+        }
+        public bool UpdateFosterHome(FosterHomeEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Homes
+                    .Single(e => e.HomeId == model.HomeId);
+
+                entity.HomeId = model.HomeId;
+                entity.FamilyName = model.FamilyName;
+                entity.OpenBeds = model.OpenBeds;
+                entity.GenderPref = model.GenderPref;
+                entity.AgePrefMin = model.AgePrefMin;
+                entity.AgePrefMax = model.AgePrefMax;
+                entity.SchoolDistrict = model.SchoolDistrict;
+                entity.Comments = model.Comments;
+
+                return ctx.SaveChanges() == 1;
+
+            }
+        }
+        public bool DeleteHome(int HomeId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Homes
+                    .Single(e => e.HomeId == HomeId);
+
+                ctx.Homes.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }
+
