@@ -99,7 +99,17 @@ namespace FosterFinder.WebMVC.Controllers
 
             return View(model);
         }
+        [HttpPost]
+        [ActionName("Delete")]
+        public ActionResult DeletePost(int id)
+        {
+            var service = CreateChildService();
 
+            service.DeleteChild(id);
+            TempData["SaveResult"] = "The child's info was deleted.";
+
+            return RedirectToAction("Index");
+        }
 
         private ChildService CreateChildService()
         {

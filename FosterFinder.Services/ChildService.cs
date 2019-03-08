@@ -104,5 +104,18 @@ namespace FosterFinder.Services
                 return ctx.SaveChanges() == 1;
             }
         }
+        public bool DeleteChild(int childId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Children
+                    .Single(e => e.ChildId == childId);
+
+                    ctx.Children.Remove(entity);
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }
