@@ -21,12 +21,14 @@ namespace FosterFinder.WebMVC.Controllers
 
             return View(model);
         }
+        [Authorize(Roles ="Admin, ChildManager")]
         public ActionResult Create()
         {
             return View();
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin, ChildManager")]
         public ActionResult Create(ChildCreate model)
         {
             if (!ModelState.IsValid) return View(model);
@@ -42,6 +44,7 @@ namespace FosterFinder.WebMVC.Controllers
 
             return View(model);
         }
+        [Authorize(Roles = "Admin, ChildManager")]
         public ActionResult Details(int id)
         {
             var svc = CreateChildService();
@@ -49,7 +52,7 @@ namespace FosterFinder.WebMVC.Controllers
 
             return View(model);
         }
-
+        [Authorize(Roles = "Admin, ChildManager")]
         public ActionResult Edit(int id)
         {
             var service = CreateChildService();
@@ -71,6 +74,7 @@ namespace FosterFinder.WebMVC.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin, ChildManager")]
         public ActionResult Edit(int id, ChildEdit model)
         {
             if (!ModelState.IsValid) return View(model);
@@ -92,6 +96,7 @@ namespace FosterFinder.WebMVC.Controllers
             return View(model);
         }
         [ActionName("Delete")]
+        [Authorize(Roles = "Admin, ChildManager")]
         public ActionResult Delete(int id)
         {
             var svc = CreateChildService();
@@ -101,6 +106,7 @@ namespace FosterFinder.WebMVC.Controllers
         }
         [HttpPost]
         [ActionName("Delete")]
+        [Authorize(Roles = "Admin, ChildManager")]
         public ActionResult DeletePost(int id)
         {
             var service = CreateChildService();

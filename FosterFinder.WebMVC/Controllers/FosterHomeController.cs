@@ -21,12 +21,14 @@ namespace FosterFinder.WebMVC.Controllers
 
             return View(model);
         }
+        [Authorize(Roles ="Admin, FosterHomeManager")]
         public ActionResult Create()
         {
             return View();
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin, FosterHomeManager")]
         public ActionResult Create(FosterHomeCreate model)
         {
             if (!ModelState.IsValid) return View(model);
@@ -42,7 +44,6 @@ namespace FosterFinder.WebMVC.Controllers
 
             return View(model);
         }
-        
         public ActionResult Details(int id)
         {
             var svc = CreateFosterHomeService();
@@ -50,7 +51,7 @@ namespace FosterFinder.WebMVC.Controllers
 
             return View(model);
         }
-
+        [Authorize(Roles = "Admin, FosterHomeManager")]
         public ActionResult Edit(int id)
         {
             var service = CreateFosterHomeService();
@@ -71,6 +72,7 @@ namespace FosterFinder.WebMVC.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin, FosterHomeManager")]
         public ActionResult Edit(int id, FosterHomeEdit model)
         {
             if (!ModelState.IsValid) return View(model);
@@ -93,6 +95,7 @@ namespace FosterFinder.WebMVC.Controllers
         }
 
         [ActionName("Delete")]
+        [Authorize(Roles = "Admin, FosterHomeManager")]
         public ActionResult Delete(int id)
         {
             var svc = CreateFosterHomeService();
@@ -103,6 +106,7 @@ namespace FosterFinder.WebMVC.Controllers
         [HttpPost]
         [ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin, FosterHomeManager")]
         public ActionResult DeletePost(int id)
         {
             var service = CreateFosterHomeService();
