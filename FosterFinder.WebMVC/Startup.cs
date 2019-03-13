@@ -23,13 +23,17 @@ namespace FosterFinder.WebMVC
 
             if (!roleManager.RoleExists("Admin"))
             {
-                var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
-                role.Name = "Admin";
+                var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole
+                {
+                    Name = "Admin"
+                };
                 roleManager.Create(role);
 
-                var user = new ApplicationUser();
-                user.UserName = "Laura";
-                user.Email = "lgarcia223@gmail.com";
+                ApplicationUser user = new ApplicationUser
+                {
+                    UserName = "Laura",
+                    Email = "lgarcia223@gmail.com"
+                };
 
                 string userPWD = "123123";
 
@@ -39,21 +43,23 @@ namespace FosterFinder.WebMVC
                 {
                     var result1 = UserManager.AddToRole(user.Id, "Admin");
                 }
-
             }
             if (!roleManager.RoleExists("FosterHomeManager"))
             {
-                var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
-                role.Name = "FosterHomeManager";
+                var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole
+                {
+                    Name = "FosterHomeManager"
+                };
                 roleManager.Create(role);
             }
             if (!roleManager.RoleExists("ChildManager"))
             {
-                var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
-                role.Name = "ChildManager";
+                var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole
+                {
+                    Name = "ChildManager"
+                };
                 roleManager.Create(role);
             }
-
         }
     }
 }

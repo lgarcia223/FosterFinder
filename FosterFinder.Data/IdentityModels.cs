@@ -34,7 +34,6 @@ namespace FosterFinder.Data
         }
         public DbSet<FosterHome> Homes { get; set; }
         public DbSet<Child> Children { get; set;  }
-        public IEnumerable<object> Notes { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -60,7 +59,7 @@ namespace FosterFinder.Data
     {
         public IdentityUserRoleConfiguration()
         {
-            HasKey(IdentityUserRole => IdentityUserRole.RoleId);
+            HasKey(IdentityUserRole => IdentityUserRole.UserId);
         }
     }
 }
