@@ -66,6 +66,9 @@ namespace FosterFinder.WebMVC.Controllers
                     AgePrefMin = detail.AgePrefMin,
                     AgePrefMax = detail.AgePrefMax,
                     SchoolDistrict = detail.SchoolDistrict,
+                    Agency = detail.Agency,
+                    CaseworkerName = detail.CaseworkerName,
+                    CaseworkerContact = detail.CaseworkerContact,
                     Comments = detail.Comments
                 };
                 return View(model);

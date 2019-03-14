@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace FosterFinder.Data
 {
-    public enum ChildGender { Male, Female, Other };
+    public enum ChildGender { Male, Female, [Display(Name = "N/A")] NA };
 
     public class Child
     {
@@ -32,6 +32,13 @@ namespace FosterFinder.Data
         public string SchoolDistNeed { get; set; }
         public string Comments { get; set; }
 
+        [Display(Name = "Case Worker Name")]
+        public string CaseworkerName { get; set; }
+
+        [Display(Name = "Case Worker Contact")]
+        public string CaseworkerContact { get; set; }
+
         public DateTimeOffset? ModifiedUtc { get; set; }
+
     }
 }

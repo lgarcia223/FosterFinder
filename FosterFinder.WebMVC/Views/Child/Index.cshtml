@@ -37,10 +37,13 @@
             @Html.DisplayNameFor(model => model.SchoolDistNeed)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Comments)
+            @Html.DisplayNameFor(model => model.CaseworkerName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ModifiedUtc)
+            @Html.DisplayNameFor(model => model.CaseworkerContact)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Comments)
         </th>
         <th></th>
     </tr>
@@ -63,15 +66,19 @@
             @Html.DisplayFor(modelItem => item.SchoolDistNeed)
         </td>
         <td>
+            @Html.DisplayFor(modelItem => item.CaseworkerName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CaseworkerContact)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.Comments)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.ModifiedUtc)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ChildId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ChildId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ChildId })
+            @Html.ActionLink("Edit", "Edit", new { id = item.ChildId }) |
+            @Html.ActionLink("Details", "Details", new { id = item.ChildId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.ChildId })  |
+            @Html.ActionLink("Find Matches", "MatchHomes", new { id = item.ChildId})
         </td>
     </tr>
 }

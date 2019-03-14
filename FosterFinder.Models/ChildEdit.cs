@@ -15,6 +15,8 @@ namespace FosterFinder.Models
         public ChildGender ChildGender { get; set; }
         public double ChildAge { get; set; }
         public string SchoolDistNeed { get; set; }
+        public string CaseworkerName { get; set; }
+        public string CaseworkerContact { get; set; }
         public string Comments { get; set; }
 
         public DateTimeOffset? ModifiedUtc { get; set; }

@@ -22,6 +22,11 @@ namespace FosterFinder.Models
         [Display(Name = "School District")]
         public string SchoolDistNeed { get; set; }
         public string Comments { get; set; }
+        [Display(Name = "Case Worker Name")]
+        public string CaseworkerName { get; set; }
+        [Display(Name = "Case Worker Contact")]
+        public string CaseworkerContact { get; set; }
+
 
         public DateTimeOffset? ModifiedUtc { get; set; }
 

@@ -24,7 +24,7 @@ namespace FosterFinder.Services
                 HomeId = model.HomeId,
                 FamilyName = model.FamilyName,
                 OpenBeds = model.OpenBeds,
-                GenderPref = model.genderPref,
+                GenderPref = model.GenderPref,
                 AgePrefMin = model.AgePrefMin,
                 AgePrefMax = model.AgePrefMax,
                 SchoolDistrict = model.SchoolDistrict,

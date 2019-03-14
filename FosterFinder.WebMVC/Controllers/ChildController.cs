@@ -67,6 +67,8 @@ namespace FosterFinder.WebMVC.Controllers
                     ChildAge = detail.ChildAge,
                     SchoolDistNeed = detail.SchoolDistNeed,
                     Comments = detail.Comments,
+                    CaseworkerName = detail.CaseworkerName,
+                    CaseworkerContact = detail.CaseworkerContact,
                     ModifiedUtc = detail.ModifiedUtc
                 };
             return View(model);
@@ -122,6 +124,12 @@ namespace FosterFinder.WebMVC.Controllers
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new ChildService(userId);
             return service;
+        }
+        public ActionResult MatchHomes (int id)
+        {
+            var svc =  CreateChildService();
+            var model = svc.GetHomeMatches(id);
+            return View(model);
         }
     }
 }

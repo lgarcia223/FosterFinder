@@ -21,7 +21,7 @@ namespace FosterFinder.Models
         public int OpenBeds { get; set; }
         [Required]
         [Display(Name = "Gender Preference")]
-        public GenderPref genderPref { get; set; }
+        public ChildGender GenderPref { get; set; }
         [Required]
         [Display(Name = "Minimum Age Preference")]
         [Range(0, 18, ErrorMessage = "Please choose a number between 0 and 18")]
@@ -33,9 +33,17 @@ namespace FosterFinder.Models
         [Required]
         [Display(Name = "School District")]
         public string SchoolDistrict { get; set; }
+        public string Agency { get; set; }
+
+        [Display(Name = "Licensing Worker Name")]
+        public string CaseworkerName { get; set; }
+
+        [Display(Name = "Licensing Worker Contact")]
+        public string CaseworkerContact { get; set; }
+
         [MaxLength(200, ErrorMessage = "There are too many characters in this field.")]
         public string Comments { get; set; }
-
+        [DisplayFormat(DataFormatString = "{mm/dd/yy}")]
         public DateTimeOffset ModifiedUtc { get; set; }
 
     }

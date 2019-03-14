@@ -77,6 +77,8 @@ namespace FosterFinder.Services
                         ChildGender = entity.ChildGender,
                         ChildAge = entity.ChildAge,
                         SchoolDistNeed = entity.SchoolDistNeed,
+                        CaseworkerName = entity.CaseworkerName,
+                        CaseworkerContact = entity.CaseworkerContact,
                         Comments = entity.Comments,
 
                         ModifiedUtc = entity.ModifiedUtc
@@ -98,6 +100,8 @@ namespace FosterFinder.Services
                 entity.ChildGender = model.ChildGender;
                 entity.ChildAge = model.ChildAge;
                 entity.SchoolDistNeed = model.SchoolDistNeed;
+                entity.CaseworkerName = model.CaseworkerName;
+                entity.CaseworkerContact = model.CaseworkerContact;
                 entity.Comments = model.Comments;
                 entity.ModifiedUtc = model.ModifiedUtc;
 
@@ -115,6 +119,29 @@ namespace FosterFinder.Services
 
                     ctx.Children.Remove(entity);
                 return ctx.SaveChanges() == 1;
+            }
+        }
+        public IEnumerable<FosterHomeListItem> GetHomeMatches (int childId)
+        {
+            var child = GetChildById(childId);
+            using (var context = new ApplicationDbContext())
+            {
+                var homes = context.Homes.Where(h => h.OpenBeds >= child.BedsNeed && h.AgePrefMax >= child.ChildAge && h.AgePrefMin <= child.ChildAge && h.GenderPref == child.ChildGender || h.GenderPref == ChildGender.NA)
+                    .Select(e => new FosterHomeListItem
+                    {
+                        HomeId = e.HomeId,
+                        FamilyName = e.FamilyName,
+                        OpenBeds = e.OpenBeds,
+                        GenderPref = e.GenderPref,
+                        AgePrefMin = e.AgePrefMin,
+                        AgePrefMax = e.AgePrefMax,
+                        SchoolDistrict = e.SchoolDistrict,
+                        Comments = e.Comments,
+
+                        ModifiedUtc = e.ModifiedUtc
+                    });
+
+                return homes.ToArray();
             }
         }
     }
