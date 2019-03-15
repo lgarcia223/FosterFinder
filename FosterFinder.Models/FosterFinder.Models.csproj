@@ -62,7 +62,6 @@
     <Compile Include="FosterHomeDetail.cs" />
     <Compile Include="FosterHomeEdit.cs" />
     <Compile Include="FosterHomeListItem.cs" />
-    <Compile Include="MatchHomes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

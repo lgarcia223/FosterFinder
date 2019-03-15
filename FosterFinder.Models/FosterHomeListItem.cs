@@ -33,13 +33,13 @@ namespace FosterFinder.Models
         public double AgePrefMax { get; set; }
         [Display(Name = "School District")]
         public string SchoolDistrict { get; set; }
-        public string Agency { get; set; }
-
         [Display(Name = "Licensing Worker Name")]
         public string CaseworkerName { get; set; }
-
         [Display(Name = "Licensing Worker Contact")]
         public string CaseworkerContact { get; set; }
+
+        public string Agency { get; set; }
+
 
         [MaxLength(200, ErrorMessage = "There are too many characters in this field.")]
         public string Comments { get; set; }

@@ -1,4 +1,4 @@
-﻿using FosterFinder.Data;
+﻿ using FosterFinder.Data;
 using FosterFinder.Models;
 using System;
 using System.Collections.Generic;
@@ -52,9 +52,9 @@ namespace FosterFinder.Services
                             ChildGender = e.ChildGender,
                             ChildAge = e.ChildAge,
                             SchoolDistNeed = e.SchoolDistNeed,
+                            CaseworkerName = e.CaseworkerName,
+                            CaseworkerContact = e.CaseworkerContact,
                             Comments = e.Comments,
-
-                            ModifiedUtc = e.ModifiedUtc
                         }
                 );
                 return query.ToArray();
@@ -126,7 +126,11 @@ namespace FosterFinder.Services
             var child = GetChildById(childId);
             using (var context = new ApplicationDbContext())
             {
-                var homes = context.Homes.Where(h => h.OpenBeds >= child.BedsNeed && h.AgePrefMax >= child.ChildAge && h.AgePrefMin <= child.ChildAge && h.GenderPref == child.ChildGender || h.GenderPref == ChildGender.NA)
+                var homes = context.Homes.Where(h => h.OpenBeds >= child.BedsNeed && 
+                                                h.AgePrefMax >= child.ChildAge && 
+                                                h.AgePrefMin <= child.ChildAge && 
+                                                h.GenderPref == child.ChildGender ||
+                                                h.GenderPref == ChildGender.NA)
                     .Select(e => new FosterHomeListItem
                     {
                         HomeId = e.HomeId,
@@ -136,6 +140,8 @@ namespace FosterFinder.Services
                         AgePrefMin = e.AgePrefMin,
                         AgePrefMax = e.AgePrefMax,
                         SchoolDistrict = e.SchoolDistrict,
+                        CaseworkerName = e.CaseworkerName,
+                        CaseworkerContact = e.CaseworkerContact, 
                         Comments = e.Comments,
 
                         ModifiedUtc = e.ModifiedUtc

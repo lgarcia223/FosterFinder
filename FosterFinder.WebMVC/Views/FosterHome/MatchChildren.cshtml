@@ -1,0 +1,69 @@
+﻿@model IEnumerable<FosterFinder.Models.ChildListItem>
+
+@{
+    ViewBag.Title = "MatchChildren";
+}
+
+
+<h2>These children are a match.</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ChildName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BedsNeed)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ChildAge)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SchoolDistNeed)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CaseworkerName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CaseworkerContact)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Comments)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ChildName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BedsNeed)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ChildAge)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SchoolDistNeed)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CaseworkerName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CaseworkerContact)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Comments)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ChildId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ChildId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ChildId })
+        </td>
+    </tr>
+}
+
+</table>

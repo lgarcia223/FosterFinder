@@ -29,7 +29,6 @@ namespace FosterFinder.Services
                 AgePrefMax = model.AgePrefMax,
                 SchoolDistrict = model.SchoolDistrict,
                 Comments = model.Comments,
-                ModifiedUtc = DateTimeOffset.Now
             };
 
             using (var ctx = new ApplicationDbContext())
@@ -54,13 +53,14 @@ namespace FosterFinder.Services
                          AgePrefMin = e.AgePrefMin,
                          AgePrefMax = e.AgePrefMax,
                          SchoolDistrict = e.SchoolDistrict,
+                         CaseworkerName = e.CaseworkerName,
+                         CaseworkerContact = e.CaseworkerContact,
                          Comments = e.Comments,
 
                          ModifiedUtc = e.ModifiedUtc
                      }
                );
                 return query.ToArray();
-
             }
         }
         public FosterHomeDetail GetHomeById(int HomeId)
@@ -81,13 +81,13 @@ namespace FosterFinder.Services
                         AgePrefMin = entity.AgePrefMin,
                         AgePrefMax = entity.AgePrefMax,
                         SchoolDistrict = entity.SchoolDistrict,
+                        CaseworkerName = entity.CaseworkerName,
+                        CaseworkerContact = entity.CaseworkerContact,
                         Comments = entity.Comments,
 
                         ModifiedUtc = entity.ModifiedUtc
-
                     };
             }
-
         }
         public bool UpdateFosterHome(FosterHomeEdit model)
         {
@@ -105,6 +105,8 @@ namespace FosterFinder.Services
                 entity.AgePrefMin = model.AgePrefMin;
                 entity.AgePrefMax = model.AgePrefMax;
                 entity.SchoolDistrict = model.SchoolDistrict;
+                entity.CaseworkerName = model.CaseworkerName;
+                entity.CaseworkerContact = model.CaseworkerContact;
                 entity.Comments = model.Comments;
 
                 return ctx.SaveChanges() == 1;
@@ -123,6 +125,31 @@ namespace FosterFinder.Services
                 ctx.Homes.Remove(entity);
 
                 return ctx.SaveChanges() == 1;
+            }
+        }
+        public IEnumerable<ChildListItem> GetChildMatches (int homeId)
+        {
+            var home = GetHomeById(homeId);
+            using (var context = new ApplicationDbContext())
+            {
+                var children = context.Children.Where(c => c.BedsNeed >= home.OpenBeds && 
+                                                      c.ChildAge <= home.AgePrefMax && 
+                                                      c.ChildAge >= home.AgePrefMin && 
+                                                      c.ChildGender == home.GenderPref ||
+                                                      home.GenderPref == ChildGender.NA)
+                    .Select(e => new ChildListItem
+                     {
+                         ChildId = e.ChildId,
+                         ChildName = e.ChildName,
+                         BedsNeed = e.BedsNeed,
+                         ChildGender = e.ChildGender,
+                         ChildAge = e.ChildAge,
+                         SchoolDistNeed = e.SchoolDistNeed,
+                         CaseworkerName = e.CaseworkerName,
+                         CaseworkerContact = e.CaseworkerContact,
+                         Comments = e.Comments,
+                     });
+                return children.ToArray();
             }
         }
     }

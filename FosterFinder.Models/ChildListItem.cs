@@ -28,7 +28,5 @@ namespace FosterFinder.Models
         [Display(Name = "Case Worker Contact")]
         public string CaseworkerContact { get; set; }
         public string Comments { get; set; }
-        [DisplayFormat(DataFormatString = "{mm/dd/yy}")]
-        public DateTimeOffset? ModifiedUtc { get; set; }
     }
 }

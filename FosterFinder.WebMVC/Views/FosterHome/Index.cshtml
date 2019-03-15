@@ -5,10 +5,12 @@
 }
 
 <h2>Foster Home Openings</h2>
-
+@if (User.IsInRole("Admin") || User.IsInRole("FosterHomeManager"))
+{
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+}
 @if (TempData.ContainsKey("SaveResult"))
 {
     <div class="alert alert-success fade in" role="alert">
@@ -53,10 +55,6 @@
         <th>
             @Html.DisplayNameFor(model => model.Comments)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ModifiedUtc)
-        </th>
-        <th></th>
     </tr>
 
     @foreach (var item in Model)
@@ -93,13 +91,16 @@
             @Html.DisplayFor(modelItem => item.Comments)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.ModifiedUtc)
+            @Html.ActionLink("Find Matches", "MatchChildren", new { id = item.HomeId})
         </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.HomeId }) |
-            @Html.ActionLink("Details", "Details", new { id = item.HomeId }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.HomeId })
-        </td>
+        @if (User.IsInRole("Admin") || User.IsInRole("FosterHomeManager"))
+        {
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.HomeId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.HomeId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.HomeId }) |
+            </td>
+        }
     </tr>
     }
 

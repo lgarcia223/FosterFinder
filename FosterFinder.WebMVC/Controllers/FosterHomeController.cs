@@ -126,5 +126,11 @@ namespace FosterFinder.WebMVC.Controllers
             var service = new FosterHomeService(userId);
             return service;
         }
+        public ActionResult MatchChildren(int id)
+        {
+            var svc = CreateFosterHomeService();
+            var model = svc.GetChildMatches(id);
+            return View(model);
+        }
     }
 }
