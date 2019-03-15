@@ -35,35 +35,36 @@
         </th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.ChildName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.BedsNeed)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ChildAge)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SchoolDistNeed)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CaseworkerName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CaseworkerContact)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Comments)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ChildId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ChildId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ChildId })
-        </td>
-    </tr>
-}
-
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ChildName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BedsNeed)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ChildAge)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SchoolDistNeed)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CaseworkerName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CaseworkerContact)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Comments)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ChildId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ChildId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ChildId })
+            </td>
+        </tr>
+    }
+    @Html.ActionLink("Back to Foster Home Index", "Index", "FosterHome")
 </table>

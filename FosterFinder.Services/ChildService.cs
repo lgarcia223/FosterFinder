@@ -27,8 +27,9 @@ namespace FosterFinder.Services
                 ChildGender = model.ChildGender,
                 ChildAge = model.ChildAge,
                 SchoolDistNeed = model.SchoolDistNeed,
+                CaseworkerName = model.CaseworkerName,
+                CaseworkerContact = model.CaseworkerContact,
                 Comments = model.Comments,
-                ModifiedUtc = DateTimeOffset.Now
             };
 
             using (var ctx = new ApplicationDbContext())
@@ -81,7 +82,6 @@ namespace FosterFinder.Services
                         CaseworkerContact = entity.CaseworkerContact,
                         Comments = entity.Comments,
 
-                        ModifiedUtc = entity.ModifiedUtc
                     };
             }
         }
@@ -103,7 +103,6 @@ namespace FosterFinder.Services
                 entity.CaseworkerName = model.CaseworkerName;
                 entity.CaseworkerContact = model.CaseworkerContact;
                 entity.Comments = model.Comments;
-                entity.ModifiedUtc = model.ModifiedUtc;
 
                 return ctx.SaveChanges() == 1;
             }

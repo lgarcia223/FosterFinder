@@ -17,19 +17,19 @@
 {
     <h2>Hello Administrator!</h2>
     @Html.ActionLink("Foster Home Openings", "Index", "FosterHome", null, new { @class = "btn btn-primary btn-lg" })
-    @Html.ActionLink("Children Needing Placement", "Index", "Children", null, new { @class = "btn btn-primary btn-lg" })
+    @Html.ActionLink("Children Needing Placement", "Index", "Child", null, new { @class = "btn btn-primary btn-lg" })
 }
 @if (User.IsInRole("FosterHomeManager"))
 {
     <h2>Hello Foster Home Manager!</h2>
     @Html.ActionLink("Foster Home Openings", "Index", "FosterHome", null, new { @class = "btn btn-primary btn-lg" })
-    @Html.ActionLink("Children Needing Placement", "Index", "Children", null, new { @class = "btn btn-primary btn-lg" })
+    @Html.ActionLink("Children Needing Placement", "Index", "Child", null, new { @class = "btn btn-primary btn-lg" })
 }
 @if (User.IsInRole("ChildManager"))
 {
     <h2>Hello Family Case Manager!</h2>
     @Html.ActionLink("Foster Home Index", "Index", "FosterHome", null, new { @class = "btn btn-primary btn-lg" })
-    @Html.ActionLink("Children Needing Placement", "Index", "Children", null, new { @class = "btn btn-primary btn-lg" })
+    @Html.ActionLink("Children Needing Placement", "Index", "Child", null, new { @class = "btn btn-primary btn-lg" })
 }
 
 

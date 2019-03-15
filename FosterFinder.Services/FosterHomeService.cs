@@ -28,6 +28,9 @@ namespace FosterFinder.Services
                 AgePrefMin = model.AgePrefMin,
                 AgePrefMax = model.AgePrefMax,
                 SchoolDistrict = model.SchoolDistrict,
+                Agency = model.Agency,
+                CaseworkerName = model.CaseworkerName,
+                CaseworkerContact = model.CaseworkerContact,
                 Comments = model.Comments,
             };
 
@@ -53,11 +56,10 @@ namespace FosterFinder.Services
                          AgePrefMin = e.AgePrefMin,
                          AgePrefMax = e.AgePrefMax,
                          SchoolDistrict = e.SchoolDistrict,
+                         Agency = e.Agency,
                          CaseworkerName = e.CaseworkerName,
                          CaseworkerContact = e.CaseworkerContact,
                          Comments = e.Comments,
-
-                         ModifiedUtc = e.ModifiedUtc
                      }
                );
                 return query.ToArray();
@@ -81,11 +83,10 @@ namespace FosterFinder.Services
                         AgePrefMin = entity.AgePrefMin,
                         AgePrefMax = entity.AgePrefMax,
                         SchoolDistrict = entity.SchoolDistrict,
+                        Agency = entity.Agency,
                         CaseworkerName = entity.CaseworkerName,
                         CaseworkerContact = entity.CaseworkerContact,
                         Comments = entity.Comments,
-
-                        ModifiedUtc = entity.ModifiedUtc
                     };
             }
         }
@@ -105,6 +106,7 @@ namespace FosterFinder.Services
                 entity.AgePrefMin = model.AgePrefMin;
                 entity.AgePrefMax = model.AgePrefMax;
                 entity.SchoolDistrict = model.SchoolDistrict;
+                entity.Agency = model.Agency;
                 entity.CaseworkerName = model.CaseworkerName;
                 entity.CaseworkerContact = model.CaseworkerContact;
                 entity.Comments = model.Comments;

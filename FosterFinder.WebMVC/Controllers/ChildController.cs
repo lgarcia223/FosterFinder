@@ -69,7 +69,6 @@ namespace FosterFinder.WebMVC.Controllers
                     Comments = detail.Comments,
                     CaseworkerName = detail.CaseworkerName,
                     CaseworkerContact = detail.CaseworkerContact,
-                    ModifiedUtc = detail.ModifiedUtc
                 };
             return View(model);
         }

@@ -4,7 +4,7 @@
     ViewBag.Title = "MatchHomes";
 }
 
-<h2>These homes are a match.</h2>
+<h2>These homes are a match for the child.</h2>
 
 
 <table class="table">
@@ -68,12 +68,7 @@
         <td>
             @Html.DisplayFor(modelItem => item.Comments)
         </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-        </td>
     </tr>
 }
-
+    @Html.ActionLink("Back to Child Index", "Index")
 </table>
