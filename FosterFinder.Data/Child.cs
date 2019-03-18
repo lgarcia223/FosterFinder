@@ -38,7 +38,6 @@ namespace FosterFinder.Data
         [Display(Name = "Case Worker Contact")]
         public string CaseworkerContact { get; set; }
 
-        public DateTimeOffset? ModifiedUtc { get; set; }
 
     }
 }

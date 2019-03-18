@@ -65,6 +65,10 @@
     <Compile Include="Migrations\201903141854315_CaseworkerInfoAdded.Designer.cs">
       <DependentUpon>201903141854315_CaseworkerInfoAdded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201903181902437_AdminError.cs" />
+    <Compile Include="Migrations\201903181902437_AdminError.Designer.cs">
+      <DependentUpon>201903181902437_AdminError.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -78,6 +82,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201903141854315_CaseworkerInfoAdded.resx">
       <DependentUpon>201903141854315_CaseworkerInfoAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903181902437_AdminError.resx">
+      <DependentUpon>201903181902437_AdminError.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

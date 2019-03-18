@@ -77,13 +77,16 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Comments)
             </td>
+            <td>
+                <i class="fas fa-home" style="color:#bf0940"></i>
+                @Html.ActionLink("Find Homes", "MatchHomes", new { id = item.ChildId }, new { @class = "links"})
+            </td>
             @if (User.IsInRole("Admin") || User.IsInRole("ChildManager"))
             {
                 <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.ChildId }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.ChildId }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.ChildId })  |
-                    @Html.ActionLink("Find Matches", "MatchHomes", new { id = item.ChildId })
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ChildId }, new { @class = "links" }) 
+                    @Html.ActionLink("Details", "Details", new { id = item.ChildId }, new { @class = "links" }) 
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ChildId }, new { @class = "links" })  
                 </td>
             }
         </tr>

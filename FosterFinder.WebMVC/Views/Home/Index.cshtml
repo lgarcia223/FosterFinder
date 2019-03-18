@@ -2,74 +2,52 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>Foster Match</h1>
-    <p class="lead">Helping foster families come together.</p>
-</div>
 
-@if (!User.Identity.IsAuthenticated)
-{
+    <div class="jumbotron">
+        <h1>Foster Match</h1>
+        <p class="lead">Helping foster families come together.</p>
+    </div>
 
-    @Html.ActionLink("Log in", "Login", "Account", null, new { @class = "btn btn-primary btn-lg" })
-    <p> @Html.ActionLink("Register Here", "Register", "Account", null, null)</p>
-}
-@if (User.IsInRole("Admin"))
-{
-    <h2>Hello Administrator!</h2>
-    @Html.ActionLink("Foster Home Openings", "Index", "FosterHome", null, new { @class = "btn btn-primary btn-lg" })
-    @Html.ActionLink("Children Needing Placement", "Index", "Child", null, new { @class = "btn btn-primary btn-lg" })
-}
-@if (User.IsInRole("FosterHomeManager"))
-{
-    <h2>Hello Foster Home Manager!</h2>
-    @Html.ActionLink("Foster Home Openings", "Index", "FosterHome", null, new { @class = "btn btn-primary btn-lg" })
-    @Html.ActionLink("Children Needing Placement", "Index", "Child", null, new { @class = "btn btn-primary btn-lg" })
-}
-@if (User.IsInRole("ChildManager"))
-{
-    <h2>Hello Family Case Manager!</h2>
-    @Html.ActionLink("Foster Home Index", "Index", "FosterHome", null, new { @class = "btn btn-primary btn-lg" })
-    @Html.ActionLink("Children Needing Placement", "Index", "Child", null, new { @class = "btn btn-primary btn-lg" })
-}
+    @if (!User.Identity.IsAuthenticated)
+    {
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@*<div class="row">
-        <div class="col-md-4">
-            <h2>Getting started</h2>
-            <p>
-                ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-                enables a clean separation of concerns and gives you full control over markup
-                for enjoyable, agile development.
-            </p>
-            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        @Html.ActionLink("Log in", "Login", "Account", null, new { @class = "mybtn" })
+        @Html.ActionLink("Register Here", "Register", "Account", null, new { @class = "mybtn" })
+    }
+    @if (User.IsInRole("Admin"))
+    {
+        <div style="padding:0 30vw 0 30vw;">
+            @Html.ActionLink("Foster Home Openings", "Index", "FosterHome", null, new { @class = "mybtn" })
+            @Html.ActionLink("Children Needing Placement", "Index", "Child", null, new { @class = "mybtn" }) 
         </div>
-        <div class="col-md-4">
-            <h2>Get more libraries</h2>
-            <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-        </div>
-        <div class="col-md-4">
-            <h2>Web Hosting</h2>
-            <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-        </div>
-    </div>*@
+    }
+    @if (User.IsInRole("FosterHomeManager"))
+    {
+        @Html.ActionLink("Foster Home Openings", "Index", "FosterHome", null, new { @class = "mybtn" })
+        @Html.ActionLink("Children Needing Placement", "Index", "Child", null, new { @class = "mybtn" })
+    }
+    @if (User.IsInRole("ChildManager"))
+    {
+        @Html.ActionLink("Foster Home Index", "Index", "FosterHome", null, new { @class = "mybtn" })
+        @Html.ActionLink("Children Needing Placement", "Index", "Child", null, new { @class = "mybtn" })
+    }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

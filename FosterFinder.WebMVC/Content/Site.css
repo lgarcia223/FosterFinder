@@ -1,6 +1,8 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-size: auto;
+    background-image: url('Images/heart candles.jpg')
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -8,10 +10,54 @@
     padding-left: 15px;
     padding-right: 15px;
 }
+.jumbotron {
+    color: lightgoldenrodyellow;
+    background-color: transparent;
+    font-family: 'Tangerine', cursive;
+    text-align: center;
+    padding-bottom: 5px;
+    margin-bottom: 1px;
+}
+.mybtn {
+    background: darkcyan;
+    color: lightgoldenrodyellow;
+    display: inline-block;
+    padding: 6px 12px 6px 12px;
+    text-decoration: none;
+    border-radius: 25pt;
+    border: 2px lightgoldenrodyellow solid; 
+}
 
+h2 {
+    color: darkcyan;
+    text-align: center;
+}
+.mynav {
+    color: lightgoldenrodyellow;
+    background-color: lightgoldenrodyellow:
+}
+.table{
+    color: lightgoldenrodyellow;
+    background-color: darkcyan;
+}
+.headers{
+    color: lightgoldenrodyellow;
+    background-color: darkcyan;
+    font-size: small;
+}
+.links {
+    color: #bf0940;
+}
+li{
+    color: lightgoldenrodyellow;
+}
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
 */
+.form-group{
+    color: darkcyan;
+    
+}
 .dl-horizontal dt {
     white-space: normal;
 }
