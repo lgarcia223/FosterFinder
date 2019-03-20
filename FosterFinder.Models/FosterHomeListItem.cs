@@ -14,7 +14,7 @@ namespace FosterFinder.Models
         [Required]
         public Guid UserId { get; set; }
         [Required]
-        [Display(Name = "Foster Family Name")]
+        [Display(Name = "Foster Family")]
         public string FamilyName { get; set; }
         [Required]
         [Range(0, 5, ErrorMessage = "Please choose a number between 0 and 5")]
@@ -34,9 +34,9 @@ namespace FosterFinder.Models
         [Display(Name = "School District")]
         public string SchoolDistrict { get; set; }
         public string Agency { get; set; }
-        [Display(Name = "Licensing Worker Name")]
+        [Display(Name = "Licensing Worker")]
         public string CaseworkerName { get; set; }
-        [Display(Name = "Licensing Worker Contact")]
+        [Display(Name = " Contact")]
         public string CaseworkerContact { get; set; }
 
         [MaxLength(200, ErrorMessage = "There are too many characters in this field.")]

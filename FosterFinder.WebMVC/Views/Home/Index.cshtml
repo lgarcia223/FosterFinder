@@ -1,37 +1,49 @@
 ﻿@{
+    /**/
+
     ViewBag.Title = "Home Page";
 }
 
 
-    <div class="jumbotron">
-        <h1>Foster Match</h1>
-        <p class="lead">Helping foster families come together.</p>
-    </div>
+<div class="jumbotron">
+    <h1>Foster Match</h1>
+</div>
 
-    @if (!User.Identity.IsAuthenticated)
-    {
+@if (!User.Identity.IsAuthenticated)
+{
+    <div>
 
         @Html.ActionLink("Log in", "Login", "Account", null, new { @class = "mybtn" })
+        <br />
+        <br />
         @Html.ActionLink("Register Here", "Register", "Account", null, new { @class = "mybtn" })
-    }
-    @if (User.IsInRole("Admin"))
-    {
-        <div style="padding:0 30vw 0 30vw;">
-            @Html.ActionLink("Foster Home Openings", "Index", "FosterHome", null, new { @class = "mybtn" })
-            @Html.ActionLink("Children Needing Placement", "Index", "Child", null, new { @class = "mybtn" }) 
-        </div>
-    }
-    @if (User.IsInRole("FosterHomeManager"))
-    {
+    </div>
+}
+
+@if (User.IsInRole("Admin"))
+{
+    <div>
         @Html.ActionLink("Foster Home Openings", "Index", "FosterHome", null, new { @class = "mybtn" })
-        @Html.ActionLink("Children Needing Placement", "Index", "Child", null, new { @class = "mybtn" })
-    }
-    @if (User.IsInRole("ChildManager"))
-    {
-        @Html.ActionLink("Foster Home Index", "Index", "FosterHome", null, new { @class = "mybtn" })
-        @Html.ActionLink("Children Needing Placement", "Index", "Child", null, new { @class = "mybtn" })
-    }
-  
+        <br />
+        <br />
+        @Html.ActionLink("Children in Need of Placement", "Index", "Child", null, new { @class = "mybtn" })
+    </div>
+}
+@if (User.IsInRole("FosterHomeManager"))
+{
+    @Html.ActionLink("Foster Home Openings", "Index", "FosterHome", null, new { @class = "mybtn" })
+    <br />
+    <br />
+    @Html.ActionLink("Children in Need of Placement", "Index", "Child", null, new { @class = "mybtn" })
+}
+@if (User.IsInRole("ChildManager"))
+{
+    @Html.ActionLink("Foster Home Index", "Index", "FosterHome", null, new { @class = "mybtn" })
+    <br />
+    <br />
+    @Html.ActionLink("Children in Need of Placement", "Index", "Child", null, new { @class = "mybtn" })
+}
+
 
 
 

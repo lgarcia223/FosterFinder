@@ -4,22 +4,13 @@
     ViewBag.Title = "MatchHomes";
 }
 
-<h2>These homes are a match for the child.</h2>
+<h1>These homes are a match for the child.</h1>
 
 
 <table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.FamilyName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.OpenBeds)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.AgePrefMin)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.AgePrefMax)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.SchoolDistrict)
@@ -43,15 +34,6 @@
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.FamilyName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.OpenBeds)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AgePrefMin)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AgePrefMax)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.SchoolDistrict)

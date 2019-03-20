@@ -13,19 +13,19 @@ namespace FosterFinder.Models
     {
         [Key]
         public int ChildId { get; set; }
-        [Display(Name="Child's Name")]
+        [Display(Name="Name")]
         public string ChildName { get; set; }
-        [Display(Name ="Sibling Group Size")]
+        [Display(Name ="Sibling Group")]
         public int BedsNeed { get; set; }
         [Display(Name ="Gender")]
         public ChildGender ChildGender { get; set; }
-        [Display(Name ="Child's Age")]        
+        [Display(Name ="Age")]        
         public double ChildAge { get; set; }
         [Display(Name ="School District")]
         public string SchoolDistNeed { get; set; }
-        [Display(Name = "Case Worker Name")]
+        [Display(Name = "Case Worker")]
         public string CaseworkerName { get; set; }
-        [Display(Name = "Case Worker Contact")]
+        [Display(Name = "Contact")]
         public string CaseworkerContact { get; set; }
         public string Comments { get; set; }
     }

@@ -4,7 +4,7 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Foster Home Openings</h2>
+<h1>Foster Home Openings</h1>
 @if (User.IsInRole("Admin") || User.IsInRole("FosterHomeManager"))
 {
     <p>
@@ -27,31 +27,13 @@
         <th>
             @Html.DisplayNameFor(model => model.FamilyName)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.OpenBeds)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.GenderPref)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.AgePrefMin)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.AgePrefMax)
-        </th>
+        <th>@Html.DisplayNameFor(model => model.GenderPref)</th>
+        <th>@Html.DisplayNameFor(model => model.AgePrefMin)</th>
+        <th>@Html.DisplayNameFor(model => model.AgePrefMax)</th>
+
         <th>
             @Html.DisplayNameFor(model => model.SchoolDistrict)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Agency)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CaseworkerName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CaseworkerContact)
-        </th>
-
         <th>
             @Html.DisplayNameFor(model => model.Comments)
         </th>
@@ -59,50 +41,32 @@
 
     @foreach (var item in Model)
     {
-        <tr>
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FamilyName)
+        </td>
+        <td>@Html.DisplayFor(modelItem => item.GenderPref)</td>
+        <td>@Html.DisplayFor(modelItem => item.AgePrefMin)</td>
+        <td>@Html.DisplayFor(modelItem => item.AgePrefMax)</td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SchoolDistrict)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Comments)
+        </td>
+        <td>
+            <i class="fas fa-child" style="color:#bf0940"></i>
+            @Html.ActionLink("Find Matches", "MatchChildren", new { id = item.HomeId }, new { @class = "links" })
+            @Html.ActionLink("Details", "Details", new { id = item.HomeId }, new { @class = "links" })
+        </td>
+        @if (User.IsInRole("Admin") || User.IsInRole("FosterHomeManager"))
+        {
             <td>
-                @Html.DisplayFor(modelItem => item.FamilyName)
+                @Html.ActionLink("Edit", "Edit", new { id = item.HomeId }, new { @class = "links" })
+                @Html.ActionLink("Delete", "Delete", new { id = item.HomeId }, new { @class = "links" })
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.OpenBeds)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.GenderPref)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AgePrefMin)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AgePrefMax)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SchoolDistrict)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Agency)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CaseworkerName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CaseworkerContact)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Comments)
-            </td>
-            <td>
-                <i class="fas fa-child" style="color:#bf0940"></i>
-                @Html.ActionLink("Find Matches", "MatchChildren", new { id = item.HomeId }, new { @class = "links" })
-            </td>
-            @if (User.IsInRole("Admin") || User.IsInRole("FosterHomeManager"))
-             {
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.HomeId }, new { @class = "links" })
-                    @Html.ActionLink("Details", "Details", new { id = item.HomeId }, new { @class = "links" })
-                    @Html.ActionLink("Delete", "Delete", new { id = item.HomeId }, new { @class = "links" })
-                </td>
-             }
-        </tr>
+        }
+    </tr>
     }
 
 </table>

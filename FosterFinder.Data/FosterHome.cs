@@ -16,7 +16,7 @@ namespace FosterFinder.Data
         public Guid UserId { get; set; }
 
         [Required]
-        [Display(Name = "Foster Family Name")]
+        [Display(Name = "Foster Family")]
         public string FamilyName { get; set; }
 
         [Required]
@@ -38,17 +38,17 @@ namespace FosterFinder.Data
         [Display(Name = "Maximum Age Preference")]
         public double AgePrefMax { get; set; }
 
-        [Display(Name = "School District")]
+        [Display(Name = "School Dist.")]
         public string SchoolDistrict { get; set; }
 
         public string Comments { get; set; }
 
         public string Agency { get; set; }
 
-        [Display(Name = "Licensing Worker Name")]
+        [Display(Name = "Licensing Worker")]
         public string CaseworkerName { get; set; }
 
-        [Display(Name = "Licensing Worker Contact")]
+        [Display(Name = "Contact")]
         public string CaseworkerContact { get; set; }
 
         [DisplayFormat(DataFormatString = "{mm/dd/yy}")]
