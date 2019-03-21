@@ -28,11 +28,11 @@ namespace FosterFinder.Models
         [Display(Name = "Contact")]
         public string CaseworkerContact { get; set; }
         public string Comments { get; set; }
-        //[Display(Name = "Photo")]
-        //public string PhotoUrl { get; set; }
+        [Display(Name = "Photo")]
+        public string PhotoUrl { get; set; }
 
-        //[DisplayFormat(DataFormatString = "{mm/dd/yy}")]
-        //public DateTimeOffset? ModifiedUtc { get; set; }
+        [DisplayFormat(DataFormatString = "{mm/dd/yy}")]
+        public DateTimeOffset? ModifiedUtc { get; set; }
 
 
     }

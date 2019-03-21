@@ -4,12 +4,10 @@
     ViewBag.Title = "Details";
 }
 
-<h1>Child Details</h1>
 
-<div>
-    @*<h4>Child Details</h4>*@
-    <hr />
-    <dl class="dl-horizontal">
+<div class="col-md-6 row">
+    <h1>Child Details</h1>
+    <dl class="dl-horizontal" style="color: lightgoldenrodyellow;">
         <dt>
             @Html.DisplayNameFor(model => model.ChildId)
         </dt>
@@ -80,10 +78,13 @@
         <dd>
             @Html.DisplayFor(model => model.CaseworkerContact)
         </dd>
-
+        
+        <dt>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.ChildId }) |
+            @Html.ActionLink("Back to Children Needing Placement", "Index")
+        </dt>
     </dl>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ChildId}) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+<div class="col-md-6" style=" color:lightgoldenrodyellow; margin-top: 20px;">
+    <img src="@Html.DisplayFor(model=> model.PhotoUrl)" style="width:35rem; height: 40rem;" />
+ </div>

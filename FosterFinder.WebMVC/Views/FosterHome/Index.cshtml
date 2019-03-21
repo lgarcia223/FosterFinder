@@ -42,10 +42,7 @@
         <td>@Html.DisplayFor(modelItem => item.AgePrefMax)</td>
         <td>@Html.DisplayFor(modelItem => item.SchoolDistrict)</td>
         <td>@Html.DisplayFor(modelItem => item.Comments)</td>
-        <td>
-        <img src="@Html.DisplayFor(modelItem => item.PhotoUrl)" style="width:3rem; height: 3rem;"/>
-        </td>
-
+        <td><img src="@Html.DisplayFor(modelItem => item.PhotoUrl)" style="width:3rem; height: 3rem;"/></td>
         <td>
             <i class="fas fa-child" style="color:#bf0940"></i>
             @Html.ActionLink("Find Matches", "MatchChildren", new { id = item.HomeId }, new { @class = "links" })

@@ -23,73 +23,42 @@
 }
 <table class="table">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.ChildName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.BedsNeed)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ChildGender)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ChildAge)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SchoolDistNeed)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CaseworkerName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CaseworkerContact)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Comments)
-        </th>
-        <th></th>
+        <th>@Html.DisplayNameFor(model => model.ChildName)</th>
+        <th>@Html.DisplayNameFor(model => model.BedsNeed)</th>
+        <th>@Html.DisplayNameFor(model => model.ChildGender)</th>
+        <th>@Html.DisplayNameFor(model => model.ChildAge)</th>
+        <th>@Html.DisplayNameFor(model => model.SchoolDistNeed)</th>
+        <th>@Html.DisplayNameFor(model => model.CaseworkerName)</th>
+        <th>@Html.DisplayNameFor(model => model.CaseworkerContact)</th>
+        <th>@Html.DisplayNameFor(model => model.Comments)</th>
+        <th>@Html.DisplayNameFor(model => model.PhotoUrl)</th>
     </tr>
 
     @foreach (var item in Model)
     {
-        <tr>
+    <tr>
+        <td>@Html.DisplayFor(modelItem => item.ChildName)</td>
+        <td>@Html.DisplayFor(modelItem => item.BedsNeed)</td>
+        <td>@Html.DisplayFor(modelItem => item.ChildGender)</td>
+        <td>@Html.DisplayFor(modelItem => item.ChildAge)</td>
+        <td>@Html.DisplayFor(modelItem => item.SchoolDistNeed)</td>
+        <td>@Html.DisplayFor(modelItem => item.CaseworkerName)</td>
+        <td>@Html.DisplayFor(modelItem => item.CaseworkerContact)</td>
+        <td>@Html.DisplayFor(modelItem => item.Comments)</td>
+        <td><img src="@Html.DisplayFor(modelItem => item.PhotoUrl)" style="width:3rem; height: 3rem;" /></td>
+        <td>
+            <i class="fas fa-home" style="color:#bf0940"></i>
+            @Html.ActionLink("Find Homes", "MatchHomes", new { id = item.ChildId }, new { @class = "links" })
+            @Html.ActionLink("Details", "Details", new { id = item.ChildId }, new { @class = "links" })
+        </td>
+        @if (User.IsInRole("Admin") || User.IsInRole("ChildManager"))
+        {
             <td>
-                @Html.DisplayFor(modelItem => item.ChildName)
+                @Html.ActionLink("Edit", "Edit", new { id = item.ChildId }, new { @class = "links" })
+                @Html.ActionLink("Delete", "Delete", new { id = item.ChildId }, new { @class = "links" })
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BedsNeed)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ChildGender)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ChildAge)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SchoolDistNeed)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CaseworkerName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CaseworkerContact)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Comments)
-            </td>
-            <td>
-                <i class="fas fa-home" style="color:#bf0940"></i>
-                @Html.ActionLink("Find Homes", "MatchHomes", new { id = item.ChildId }, new { @class = "links"})
-            </td>
-            @if (User.IsInRole("Admin") || User.IsInRole("ChildManager"))
-            {
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.ChildId }, new { @class = "links" }) 
-                    @Html.ActionLink("Details", "Details", new { id = item.ChildId }, new { @class = "links" }) 
-                    @Html.ActionLink("Delete", "Delete", new { id = item.ChildId }, new { @class = "links" })  
-                </td>
-            }
-        </tr>
+        }
+    </tr>
     }
 
 </table>

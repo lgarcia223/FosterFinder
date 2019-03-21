@@ -73,6 +73,10 @@
     <Compile Include="Migrations\201903211456551_PhotoUrl.Designer.cs">
       <DependentUpon>201903211456551_PhotoUrl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201903212040581_PhotoUrlforChild.cs" />
+    <Compile Include="Migrations\201903212040581_PhotoUrlforChild.Designer.cs">
+      <DependentUpon>201903212040581_PhotoUrlforChild.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -92,6 +96,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201903211456551_PhotoUrl.resx">
       <DependentUpon>201903211456551_PhotoUrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903212040581_PhotoUrlforChild.resx">
+      <DependentUpon>201903212040581_PhotoUrlforChild.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

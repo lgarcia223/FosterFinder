@@ -7,64 +7,36 @@
 
 <h1>These children are a match for the foster home.</h1>
 
-@*<p>
-    @Html.ActionLink("Create New", "Create")
-</p>*@
 <table class="table">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.ChildName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.BedsNeed)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ChildAge)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SchoolDistNeed)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CaseworkerName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CaseworkerContact)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Comments)
-        </th>
+        <th>@Html.DisplayNameFor(model => model.ChildName)</th>
+        <th>@Html.DisplayNameFor(model => model.BedsNeed)</th>
+        <th>@Html.DisplayNameFor(model => model.ChildAge)</th>
+        <th>@Html.DisplayNameFor(model => model.SchoolDistNeed)</th>
+        <th>@Html.DisplayNameFor(model => model.CaseworkerName)</th>
+        <th>@Html.DisplayNameFor(model => model.CaseworkerContact)</th>
+        <th>@Html.DisplayNameFor(model => model.Comments)</th>
+        <th>@Html.DisplayNameFor(model => model.PhotoUrl)</th>
     </tr>
 
     @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.ChildName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BedsNeed)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ChildAge)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SchoolDistNeed)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CaseworkerName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CaseworkerContact)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Comments)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.ChildId }, new { @class = "links" }) |
-                @Html.ActionLink("Details", "Details", new { id = item.ChildId }, new { @class = "links" }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.ChildId }, new { @class = "links" })
-            </td>
-        </tr>
+    <tr>
+        <td>@Html.DisplayFor(modelItem => item.ChildName)</td>
+        <td>@Html.DisplayFor(modelItem => item.BedsNeed)</td>
+        <td>@Html.DisplayFor(modelItem => item.ChildAge)</td>
+        <td>@Html.DisplayFor(modelItem => item.SchoolDistNeed)</td>
+        <td>@Html.DisplayFor(modelItem => item.CaseworkerName)</td>
+        <td>@Html.DisplayFor(modelItem => item.CaseworkerContact)</td>
+        <td>@Html.DisplayFor(modelItem => item.Comments)</td>
+        <td>@Html.DisplayFor(modelItem => item.PhotoUrl)</td>
+
+        @*<td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.ChildId }, new { @class = "links" }) |
+            @Html.ActionLink("Details", "Details", new { id = item.ChildId }, new { @class = "links" }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.ChildId }, new { @class = "links" })
+        </td>*@
+    </tr>
     }
-    @Html.ActionLink("Back to Foster Home Index", "Index", "FosterHome", new { @class = "links" })
+    @Html.ActionLink("Back to Foster Home Openings", "Index", "FosterHome", new { @class = "links" })
 </table>
