@@ -43,6 +43,10 @@ namespace FosterFinder.Models
 
         [MaxLength(200, ErrorMessage = "There are too many characters in this field.")]
         public string Comments { get; set; }
+
+        [Display(Name = "Photo")]
+        public string PhotoUrl { get; set; }
+
         [DisplayFormat(DataFormatString = "{mm/dd/yy}")]
         public DateTimeOffset ModifiedUtc { get; set; }
 

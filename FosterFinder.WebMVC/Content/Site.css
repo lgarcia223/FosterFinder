@@ -40,11 +40,28 @@ p {
     border: 2px lightgoldenrodyellow solid; 
     margin: 0 40vw 0 40vw;
     width: 200px;
-}
-
-.mynav {
+ }
+.mybtnlog {
+    background: deepskyblue;
     color: lightgoldenrodyellow;
-    background-color: lightgoldenrodyellow:
+    display: inline-block;
+    padding: 6px 12px 6px 12px;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 25pt;
+    border: 2px lightgoldenrodyellow solid;
+    margin: 0 10vw 0 0vw;
+    width: 200px;
+}
+.mynav {
+    font-family: 'Tangerine', cursive;
+    font-size: 3rem;
+    color: lightgoldenrodyellow;
+    margin-top: 50px;
+    margin-left: 50px;
+}
+.mynav:hover {
+    color:darkcyan;
 }
 .table{
     color: black;
@@ -58,7 +75,7 @@ p {
 
 }
 .links {
-    color: #bf0940;
+    color: darkcyan;
 }
 li{
     color: lightgoldenrodyellow;
@@ -77,6 +94,11 @@ li{
 }
 .dl-horizontal dt {
     white-space: normal;
+}
+.largephoto {
+    display:flex;
+    justify-content:space-between;
+    align-items:stretch;
 }
 
 /* Set width on the form input elements since they're 100% wide by default */

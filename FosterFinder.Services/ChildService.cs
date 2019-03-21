@@ -30,6 +30,8 @@ namespace FosterFinder.Services
                 CaseworkerName = model.CaseworkerName,
                 CaseworkerContact = model.CaseworkerContact,
                 Comments = model.Comments,
+                PhotoUrl = model.PhotoUrl,
+                ModifiedUtc = model.ModifiedUtc,
             };
 
             using (var ctx = new ApplicationDbContext())
@@ -56,6 +58,8 @@ namespace FosterFinder.Services
                             CaseworkerName = e.CaseworkerName,
                             CaseworkerContact = e.CaseworkerContact,
                             Comments = e.Comments,
+                            PhotoUrl = e.PhotoUrl,
+                            ModifiedUtc = e.ModifiedUtc,
                         }
                 );
                 return query.ToArray();
@@ -81,7 +85,8 @@ namespace FosterFinder.Services
                         CaseworkerName = entity.CaseworkerName,
                         CaseworkerContact = entity.CaseworkerContact,
                         Comments = entity.Comments,
-
+                        PhotoUrl = entity.PhotoUrl,
+                        ModifiedUtc = entity.ModifiedUtc,
                     };
             }
         }
@@ -103,6 +108,8 @@ namespace FosterFinder.Services
                 entity.CaseworkerName = model.CaseworkerName;
                 entity.CaseworkerContact = model.CaseworkerContact;
                 entity.Comments = model.Comments;
+                entity.PhotoUrl = model.PhotoUrl;
+                entity.ModifiedUtc = model.ModifiedUtc;
 
                 return ctx.SaveChanges() == 1;
             }
@@ -142,8 +149,8 @@ namespace FosterFinder.Services
                         CaseworkerName = e.CaseworkerName,
                         CaseworkerContact = e.CaseworkerContact, 
                         Comments = e.Comments,
-
-                        ModifiedUtc = e.ModifiedUtc
+                        PhotoUrl = e.PhotoUrl,
+                        ModifiedUtc = e.ModifiedUtc,
                     });
 
                 return homes.ToArray();

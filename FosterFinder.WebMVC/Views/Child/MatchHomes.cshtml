@@ -9,47 +9,24 @@
 
 <table class="table">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.FamilyName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SchoolDistrict)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Agency)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CaseworkerName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CaseworkerContact)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Comments)
-        </th>
-        <th></th>
+        <th>@Html.DisplayNameFor(model => model.FamilyName)</th>
+        <th>@Html.DisplayNameFor(model => model.SchoolDistrict)</th>
+        <th>@Html.DisplayNameFor(model => model.Agency)</th>
+        <th>@Html.DisplayNameFor(model => model.CaseworkerName)</th>
+        <th>@Html.DisplayNameFor(model => model.CaseworkerContact)</th>
+        <th>@Html.DisplayNameFor(model => model.Comments)</th>
+        <th>@Html.DisplayNameFor(model => model.PhotoUrl)</th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.FamilyName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SchoolDistrict)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Agency)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CaseworkerName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CaseworkerContact)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Comments)
-        </td>
+        <td>@Html.DisplayFor(modelItem => item.FamilyName)</td>
+        <td>@Html.DisplayFor(modelItem => item.SchoolDistrict)</td>
+        <td>@Html.DisplayFor(modelItem => item.Agency)</td>
+        <td>@Html.DisplayFor(modelItem => item.CaseworkerName)</td>
+        <td>@Html.DisplayFor(modelItem => item.CaseworkerContact)</td>
+        <td>@Html.DisplayFor(modelItem => item.Comments)</td>
+        <td>@Html.DisplayFor(modelItem => item.PhotoUrl)</td>
     </tr>
 }
     @Html.ActionLink("Back to Child Index", "Index")

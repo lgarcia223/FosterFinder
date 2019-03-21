@@ -24,36 +24,28 @@
 
 <table class="table">
     <tr class="headers">
-        <th>
-            @Html.DisplayNameFor(model => model.FamilyName)
-        </th>
+        <th>@Html.DisplayNameFor(model => model.FamilyName)</th>
         <th>@Html.DisplayNameFor(model => model.GenderPref)</th>
         <th>@Html.DisplayNameFor(model => model.AgePrefMin)</th>
         <th>@Html.DisplayNameFor(model => model.AgePrefMax)</th>
-
-        <th>
-            @Html.DisplayNameFor(model => model.SchoolDistrict)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Comments)
-        </th>
+        <th>@Html.DisplayNameFor(model => model.SchoolDistrict)</th>
+        <th>@Html.DisplayNameFor(model => model.Comments)</th>
+        <th>@Html.DisplayNameFor(model => model.PhotoUrl)</th>
     </tr>
 
     @foreach (var item in Model)
     {
     <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.FamilyName)
-        </td>
+        <td>@Html.DisplayFor(modelItem => item.FamilyName)</td>
         <td>@Html.DisplayFor(modelItem => item.GenderPref)</td>
         <td>@Html.DisplayFor(modelItem => item.AgePrefMin)</td>
         <td>@Html.DisplayFor(modelItem => item.AgePrefMax)</td>
+        <td>@Html.DisplayFor(modelItem => item.SchoolDistrict)</td>
+        <td>@Html.DisplayFor(modelItem => item.Comments)</td>
         <td>
-            @Html.DisplayFor(modelItem => item.SchoolDistrict)
+        <img src="@Html.DisplayFor(modelItem => item.PhotoUrl)" style="width:3rem; height: 3rem;"/>
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Comments)
-        </td>
+
         <td>
             <i class="fas fa-child" style="color:#bf0940"></i>
             @Html.ActionLink("Find Matches", "MatchChildren", new { id = item.HomeId }, new { @class = "links" })

@@ -31,12 +31,17 @@ namespace FosterFinder.Data
         [Display(Name = "School District")]
         public string SchoolDistNeed { get; set; }
         public string Comments { get; set; }
-
         [Display(Name = "Case Worker Name")]
         public string CaseworkerName { get; set; }
-
         [Display(Name = "Case Worker Contact")]
         public string CaseworkerContact { get; set; }
+        [Display(Name = "Photo")]
+        public string PhotoUrl { get; set; }
+
+        [DisplayFormat(DataFormatString = "{mm/dd/yy}")]
+        public DateTimeOffset? ModifiedUtc { get; set; }
+
+
 
 
     }

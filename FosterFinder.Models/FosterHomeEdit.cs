@@ -47,5 +47,13 @@ namespace FosterFinder.Models
         [Display(Name = "Licensing Worker Contact")]
         public string CaseworkerContact { get; set; }
 
+        [Display(Name = "Photo")]
+        public string PhotoUrl { get; set; }
+
+        [DisplayFormat(DataFormatString = "{mm/dd/yy}")]
+        public DateTimeOffset? ModifiedUtc { get; set; }
+
+
+
     }
 }

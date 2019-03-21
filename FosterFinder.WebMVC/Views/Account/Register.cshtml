@@ -37,8 +37,8 @@
     </div>
 
     <div class="form-group">
-        @Html.Label("user Role", new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
+        @Html.Label("User Role", new { @class = "col-md-2 control-label" })
+        <div class="col-md-10" style="color:darkcyan;">
             @*@Html.DropDownList("Name")*@
             @Html.DropDownList("UserRoles", (SelectList)ViewBag.Name)
         </div>
@@ -46,7 +46,7 @@
 
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
-            <input type="submit" class="btn btn-default" value="Register" />
+            <input type="submit" class="mybtnlog" value="Register" />
         </div>
     </div>
 }

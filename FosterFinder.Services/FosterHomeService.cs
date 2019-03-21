@@ -31,6 +31,8 @@ namespace FosterFinder.Services
                 Agency = model.Agency,
                 CaseworkerName = model.CaseworkerName,
                 CaseworkerContact = model.CaseworkerContact,
+                PhotoUrl = model.PhotoUrl,
+                ModifiedUtc = model.ModifiedUtc,
                 Comments = model.Comments,
             };
 
@@ -59,6 +61,8 @@ namespace FosterFinder.Services
                          Agency = e.Agency,
                          CaseworkerName = e.CaseworkerName,
                          CaseworkerContact = e.CaseworkerContact,
+                         PhotoUrl = e.PhotoUrl,
+                         ModifiedUtc = e.ModifiedUtc,
                          Comments = e.Comments,
                      }
                );
@@ -87,6 +91,8 @@ namespace FosterFinder.Services
                         CaseworkerName = entity.CaseworkerName,
                         CaseworkerContact = entity.CaseworkerContact,
                         Comments = entity.Comments,
+                        PhotoUrl = entity.PhotoUrl,
+                        ModifiedUtc = entity.ModifiedUtc,
                     };
             }
         }
@@ -110,6 +116,8 @@ namespace FosterFinder.Services
                 entity.CaseworkerName = model.CaseworkerName;
                 entity.CaseworkerContact = model.CaseworkerContact;
                 entity.Comments = model.Comments;
+                entity.PhotoUrl = model.PhotoUrl;
+                entity.ModifiedUtc = model.ModifiedUtc;
 
                 return ctx.SaveChanges() == 1;
 

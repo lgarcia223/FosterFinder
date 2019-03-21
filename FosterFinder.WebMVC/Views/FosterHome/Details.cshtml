@@ -4,16 +4,15 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Foster Home Details</h2>
 
-<div>
-    @*<h4>FosterHomeDetail</h4>*@
-    <hr />
-    <dl class="dl-horizontal">
+
+@*<h4>FosterHomeDetail</h4>*@
+<div class="col-md-6 row">
+    <h1>Foster Home Details</h1>
+    <dl class="dl-horizontal" style="color: lightgoldenrodyellow;">
         <dt>
             @Html.DisplayNameFor(model => model.HomeId)
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.HomeId)
         </dd>
@@ -93,18 +92,19 @@
         <dd>
             @Html.DisplayFor(model => model.Comments)
         </dd>
-
         <dt>
             @Html.DisplayNameFor(model => model.ModifiedUtc)
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.ModifiedUtc)
         </dd>
-
+        <br />
+        <dt>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.HomeId }) |
+            @Html.ActionLink("Back to List", "Index")
+        </dt>
     </dl>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.HomeId }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+ <div class="col-md-6" style=" color:lightgoldenrodyellow; margin-top: 20px;">
+    <img src="@Html.DisplayFor(model=> model.PhotoUrl)" style="width:35rem; height: 40rem;" />
+</div>

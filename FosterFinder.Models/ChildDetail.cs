@@ -26,6 +26,8 @@ namespace FosterFinder.Models
         public string CaseworkerName { get; set; }
         [Display(Name = "Case Worker Contact")]
         public string CaseworkerContact { get; set; }
+        [Display(Name = "Photo")]
+        public string PhotoUrl { get; set; }
 
 
         public DateTimeOffset? ModifiedUtc { get; set; }

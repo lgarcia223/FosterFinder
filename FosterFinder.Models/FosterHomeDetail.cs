@@ -24,14 +24,13 @@ namespace FosterFinder.Models
         [Display(Name = "School District")]
         public string SchoolDistrict { get; set; }
         public string Agency { get; set; }
-
-        [Display(Name = "Licensing Worker Name")]
+        [Display(Name = "Licensing Worker")]
         public string CaseworkerName { get; set; }
-
-        [Display(Name = "Licensing Worker Contact")]
+        [Display(Name = "Contact")]
         public string CaseworkerContact { get; set; }
-
         public string Comments { get; set; }
+        [Display(Name = "Photo")]
+        public string PhotoUrl { get; set; }
         [DisplayFormat(DataFormatString = "{mm/dd/yy}")]
         public DateTimeOffset? ModifiedUtc { get; set; }
     }
