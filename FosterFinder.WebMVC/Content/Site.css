@@ -31,18 +31,18 @@ p {
     margin-bottom: 5px;
 }
 .mybtn {
-    background: deepskyblue;
+    background: darkcyan;
     color: lightgoldenrodyellow;
     display: inline-block;
     padding: 6px 12px 6px 12px;
     text-decoration: none; text-align:center;
     border-radius: 25pt;
     border: 2px lightgoldenrodyellow solid; 
-    margin: 0 40vw 0 40vw;
+    margin: 0 0 0 35vw;
     width: 200px;
  }
 .mybtnlog {
-    background: deepskyblue;
+    background: darkcyan;
     color: lightgoldenrodyellow;
     display: inline-block;
     padding: 6px 12px 6px 12px;
@@ -99,6 +99,13 @@ li{
     display:flex;
     justify-content:space-between;
     align-items:stretch;
+}
+.error {
+    color: black;
+}
+.redirect {
+    color:lightgoldenrodyellow; 
+    text-decoration:underline;
 }
 
 /* Set width on the form input elements since they're 100% wide by default */

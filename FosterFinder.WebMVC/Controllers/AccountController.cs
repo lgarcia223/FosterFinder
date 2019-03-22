@@ -171,8 +171,10 @@ namespace FosterFinder.WebMVC.Controllers
 
                     //Assign Role to user Here
                     await this.UserManager.AddToRoleAsync(user.Id, model.UserRoles);
+                    AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
+                    await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
                     //Ends Here
-                    return RedirectToAction("Index", "Users");
+                    return RedirectToAction("Index", "Home");
                 }
                 ViewBag.Name = new SelectList(context.Roles.Where(u => !u.Name.Contains("Admin"))
                     .ToList(), "Name", "Name");

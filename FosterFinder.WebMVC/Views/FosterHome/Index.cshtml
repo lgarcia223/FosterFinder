@@ -7,9 +7,9 @@
 <h1>Foster Home Openings</h1>
 @if (User.IsInRole("Admin") || User.IsInRole("FosterHomeManager"))
 {
-    <p>
-        @Html.ActionLink("Create New", "Create")
-    </p>
+    <a class="redirect">
+        @Html.ActionLink("Create New Foster Home", "Create")
+    </a>
 }
 @if (TempData.ContainsKey("SaveResult"))
 {
@@ -36,7 +36,14 @@
     @foreach (var item in Model)
     {
     <tr>
-        <td>@Html.DisplayFor(modelItem => item.FamilyName)</td>
+        <td>
+            <a href="FosterHome/Details/?id=@item.HomeId">
+            <div style="height: 100%; width:100%">
+                @Html.DisplayFor(modelItem => item.FamilyName)
+            </div>
+            </a>
+            @*@Html.ActionLink("", "Details", new { id = item.HomeId }, new { @class = "links" })*@
+        </td>
         <td>@Html.DisplayFor(modelItem => item.GenderPref)</td>
         <td>@Html.DisplayFor(modelItem => item.AgePrefMin)</td>
         <td>@Html.DisplayFor(modelItem => item.AgePrefMax)</td>
@@ -46,7 +53,6 @@
         <td>
             <i class="fas fa-child" style="color:#bf0940"></i>
             @Html.ActionLink("Find Matches", "MatchChildren", new { id = item.HomeId }, new { @class = "links" })
-            @Html.ActionLink("Details", "Details", new { id = item.HomeId }, new { @class = "links" })
         </td>
         @if (User.IsInRole("Admin") || User.IsInRole("FosterHomeManager"))
         {
