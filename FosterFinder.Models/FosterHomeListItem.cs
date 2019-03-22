@@ -25,11 +25,11 @@ namespace FosterFinder.Models
         public ChildGender GenderPref { get; set; }
         [Required]
         [Range(0, 18, ErrorMessage = "Please choose a number between 0 and 18")]
-        [Display(Name = "Minimum Age Preference")]
+        [Display(Name = "Minimum Age")]
         public double AgePrefMin { get; set; }
         [Required]
         [Range(0, 18, ErrorMessage = "Please choose a number between 0 and 18")]
-        [Display(Name = "Maximum Age Preference")]
+        [Display(Name = "Maximum Age")]
         public double AgePrefMax { get; set; }
         [Display(Name = "School District")]
         public string SchoolDistrict { get; set; }

@@ -13,13 +13,13 @@ namespace FosterFinder.Models
         public int HomeId { get; set; }
         [Display(Name = "Foster Family Name")]
         public string FamilyName { get; set; }
-        [Display(Name = "# of Openings")]
+        [Display(Name = "Number of Openings")]
         public int OpenBeds { get; set; }
         [Display(Name = "Gender Preference")]
         public ChildGender GenderPref { get; set; }
-        [Display(Name = "Minimum Age Preference")]
+        [Display(Name = "Minimum Age")]
         public double AgePrefMin { get; set; }
-        [Display(Name = "Maximum Age Preference")]
+        [Display(Name = "Maximum Age")]
         public double AgePrefMax { get; set; }
         [Display(Name = "School District")]
         public string SchoolDistrict { get; set; }

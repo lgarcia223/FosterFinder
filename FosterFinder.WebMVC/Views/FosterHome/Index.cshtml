@@ -1,15 +1,17 @@
 ﻿@model IEnumerable<FosterFinder.Models.FosterHomeListItem>
 
 @{
+    /**/
+
     ViewBag.Title = "Index";
 }
 
 <h1>Foster Home Openings</h1>
 @if (User.IsInRole("Admin") || User.IsInRole("FosterHomeManager"))
 {
-    <a class="redirect">
-        @Html.ActionLink("Create New Foster Home", "Create")
-    </a>
+
+    @Html.ActionLink("Create New Foster Home", "Create", null, new { @class = "mynav" })
+
 }
 @if (TempData.ContainsKey("SaveResult"))
 {
@@ -35,33 +37,33 @@
 
     @foreach (var item in Model)
     {
-    <tr>
-        <td>
-            <a href="FosterHome/Details/?id=@item.HomeId">
-            <div style="height: 100%; width:100%">
-                @Html.DisplayFor(modelItem => item.FamilyName)
-            </div>
-            </a>
-            @*@Html.ActionLink("", "Details", new { id = item.HomeId }, new { @class = "links" })*@
-        </td>
-        <td>@Html.DisplayFor(modelItem => item.GenderPref)</td>
-        <td>@Html.DisplayFor(modelItem => item.AgePrefMin)</td>
-        <td>@Html.DisplayFor(modelItem => item.AgePrefMax)</td>
-        <td>@Html.DisplayFor(modelItem => item.SchoolDistrict)</td>
-        <td>@Html.DisplayFor(modelItem => item.Comments)</td>
-        <td><img src="@Html.DisplayFor(modelItem => item.PhotoUrl)" style="width:3rem; height: 3rem;"/></td>
-        <td>
-            <i class="fas fa-child" style="color:#bf0940"></i>
-            @Html.ActionLink("Find Matches", "MatchChildren", new { id = item.HomeId }, new { @class = "links" })
-        </td>
-        @if (User.IsInRole("Admin") || User.IsInRole("FosterHomeManager"))
-        {
+        <tr>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.HomeId }, new { @class = "links" })
-                @Html.ActionLink("Delete", "Delete", new { id = item.HomeId }, new { @class = "links" })
+                <a href="/FosterHome/Details/?id=@item.HomeId">
+                    <div style="height: 100%; width:100%;">
+                        @Html.DisplayFor(modelItem => item.FamilyName)
+                    </div>
+                </a>
+                @*@Html.ActionLink("", "Details", new { id = item.HomeId }, new { @class = "links" })*@
             </td>
-        }
-    </tr>
+            <td>@Html.DisplayFor(modelItem => item.GenderPref)</td>
+            <td>@Html.DisplayFor(modelItem => item.AgePrefMin)</td>
+            <td>@Html.DisplayFor(modelItem => item.AgePrefMax)</td>
+            <td>@Html.DisplayFor(modelItem => item.SchoolDistrict)</td>
+            <td>@Html.DisplayFor(modelItem => item.Comments)</td>
+            <td><img src="@Html.DisplayFor(modelItem => item.PhotoUrl)" style="width:3rem; height: 3rem;" /></td>
+            <td>
+                <i class="fas fa-child" style="color:#bf0940"></i>
+                @Html.ActionLink("Find Matches", "MatchChildren", new { id = item.HomeId }, new { @class = "links" })
+            </td>
+            @*@if (User.IsInRole("Admin") || User.IsInRole("FosterHomeManager"))
+                {
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.HomeId }, new { @class = "links" })
+                        @Html.ActionLink("Delete", "Delete", new { id = item.HomeId }, new { @class = "links" })
+                    </td>
+                }*@
+        </tr>
     }
 
-</table>
+</table>"

@@ -5,17 +5,11 @@
 }
 
 
-
 @*<h4>FosterHomeDetail</h4>*@
 <div class="col-md-6 row">
     <h1>Foster Home Details</h1>
+
     <dl class="dl-horizontal" style="color: lightgoldenrodyellow;">
-        <dt>
-            @Html.DisplayNameFor(model => model.HomeId)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.HomeId)
-        </dd>
 
         <dt>
             @Html.DisplayNameFor(model => model.FamilyName)
@@ -88,22 +82,32 @@
         <dt>
             @Html.DisplayNameFor(model => model.Comments)
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.Comments)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.ModifiedUtc)
+            @Html.DisplayNameFor(model => model.HomeId)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.ModifiedUtc)
+            @Html.DisplayFor(model => model.HomeId)
         </dd>
-        <dt>
-            @Html.ActionLink("Edit", "Edit", new { id = Model.HomeId }) |
-            @Html.ActionLink("Back to Foster Home Openings", "Index")
-        </dt>
     </dl>
+        @if (User.IsInRole("Admin") || User.IsInRole("FosterHomeManager"))
+        {
+            @Html.ActionLink("Edit", "Edit", new { id = Model.HomeId },
+                        new {@class="mynav"})
+
+
+            @Html.ActionLink("Delete", "Delete", new { id = Model.HomeId },
+                                new { @class = "mynav" })
+
+        }
+    @Html.ActionLink("Foster Home Openings", "Index", null, new { @class = "mynav" })
 </div>
- <div class="col-md-6" style=" color:lightgoldenrodyellow; margin-top: 20px;">
-    <img src="@Html.DisplayFor(model=> model.PhotoUrl)" style="width:35rem; height: 40rem;" />
+
+
+
+<div class="col-md-6" style=" margin-top: 20px;">
+    <img src="@Html.DisplayFor(model=> model.PhotoUrl)" style="width:30vw; height: 35vw;" />
 </div>
+

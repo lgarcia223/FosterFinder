@@ -38,7 +38,7 @@ p {
     text-decoration: none; text-align:center;
     border-radius: 25pt;
     border: 2px lightgoldenrodyellow solid; 
-    margin: 0 0 0 35vw;
+    margin: 0 0 0 20vw;
     width: 200px;
  }
 .mybtnlog {
@@ -56,9 +56,10 @@ p {
 .mynav {
     font-family: 'Tangerine', cursive;
     font-size: 3rem;
+    text-decoration-line: underline;
     color: lightgoldenrodyellow;
     margin-top: 50px;
-    margin-left: 50px;
+    margin-left: 10px;
 }
 .mynav:hover {
     color:darkcyan;
@@ -89,8 +90,7 @@ li{
    will truncate terms that are too long to fit in the left column 
 */
 .form-group{
-    color: lightgoldenrodyellow;
-    
+    color: lightgoldenrodyellow;  
 }
 .dl-horizontal dt {
     white-space: normal;
@@ -107,6 +107,7 @@ li{
     color:lightgoldenrodyellow; 
     text-decoration:underline;
 }
+
 
 /* Set width on the form input elements since they're 100% wide by default */
 input,
