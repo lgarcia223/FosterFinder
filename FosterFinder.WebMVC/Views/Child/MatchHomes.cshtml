@@ -1,7 +1,9 @@
 ﻿@model IEnumerable<FosterFinder.Models.FosterHomeListItem>
 
 @{
-    ViewBag.Title = "MatchHomes";
+                /**/
+
+                ViewBag.Title = "MatchHomes";
 }
 
 <h1>These homes are a match for the child.</h1>
@@ -18,16 +20,25 @@
         <th>@Html.DisplayNameFor(model => model.PhotoUrl)</th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>@Html.DisplayFor(modelItem => item.FamilyName)</td>
-        <td>@Html.DisplayFor(modelItem => item.SchoolDistrict)</td>
-        <td>@Html.DisplayFor(modelItem => item.Agency)</td>
-        <td>@Html.DisplayFor(modelItem => item.CaseworkerName)</td>
-        <td>@Html.DisplayFor(modelItem => item.CaseworkerContact)</td>
-        <td>@Html.DisplayFor(modelItem => item.Comments)</td>
-        <td>@Html.DisplayFor(modelItem => item.PhotoUrl)</td>
-    </tr>
-}
-    @Html.ActionLink("Back to Children In Need of Placement", "Index")
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <a href="/FosterHome/Details/?id=@item.HomeId">
+                    <div style="height: 100%; width:100%; text-decoration: underline;">
+                        @Html.DisplayFor(modelItem => item.FamilyName)
+                    </div>
+                </a>
+            </td>
+            <td>@Html.DisplayFor(modelItem => item.SchoolDistrict)</td>
+            <td>@Html.DisplayFor(modelItem => item.Agency)</td>
+            <td>@Html.DisplayFor(modelItem => item.CaseworkerName)</td>
+            <td>@Html.DisplayFor(modelItem => item.CaseworkerContact)</td>
+            <td>@Html.DisplayFor(modelItem => item.Comments)</td>
+            <td><img src="@Html.DisplayFor(modelItem => item.PhotoUrl)" style="width:3rem; height: 3rem;" /></td>
+        </tr>
+    }
 </table>
+<div>
+    @Html.ActionLink("Children Needing Placement", "Index", null, new { @class = "mybtnlog" })
+</div>

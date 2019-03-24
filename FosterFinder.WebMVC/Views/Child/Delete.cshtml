@@ -77,13 +77,11 @@
             <img src="@Html.DisplayFor(model=> model.PhotoUrl)" style="width:3rem; height: 3rem;" />
         </dd>
     </dl>
-
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="mybtn" /> |
-            <a class="mynav" @Html.ActionLink("Back to Children Needing Placement", "Index")></a>
-        </div>
+    <div>
+                <input type="submit" value="Delete Child Listing" class="mybtnlog" />
+    </div>
+    <div>
+        <a class="mybtnlog" @Html.ActionLink("Children Needing Placement", "Index")></a>
+    </div>
     }
 </div>

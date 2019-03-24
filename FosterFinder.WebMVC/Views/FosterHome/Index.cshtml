@@ -7,12 +7,7 @@
 }
 
 <h1>Foster Home Openings</h1>
-@if (User.IsInRole("Admin") || User.IsInRole("FosterHomeManager"))
-{
 
-    @Html.ActionLink("Create New Foster Home", "Create", null, new { @class = "mynav" })
-
-}
 @if (TempData.ContainsKey("SaveResult"))
 {
     <div class="alert alert-success fade in" role="alert">
@@ -40,11 +35,10 @@
         <tr>
             <td>
                 <a href="/FosterHome/Details/?id=@item.HomeId">
-                    <div style="height: 100%; width:100%;">
+                    <div style="height: 100%; width:100%; text-decoration: underline;">
                         @Html.DisplayFor(modelItem => item.FamilyName)
                     </div>
                 </a>
-                @*@Html.ActionLink("", "Details", new { id = item.HomeId }, new { @class = "links" })*@
             </td>
             <td>@Html.DisplayFor(modelItem => item.GenderPref)</td>
             <td>@Html.DisplayFor(modelItem => item.AgePrefMin)</td>
@@ -54,7 +48,7 @@
             <td><img src="@Html.DisplayFor(modelItem => item.PhotoUrl)" style="width:3rem; height: 3rem;" /></td>
             <td>
                 <i class="fas fa-child" style="color:#bf0940"></i>
-                @Html.ActionLink("Find Matches", "MatchChildren", new { id = item.HomeId }, new { @class = "links" })
+                @Html.ActionLink("Match", "MatchChildren", new { id = item.HomeId }, new { @class = "links" })
             </td>
             @*@if (User.IsInRole("Admin") || User.IsInRole("FosterHomeManager"))
                 {
@@ -66,4 +60,12 @@
         </tr>
     }
 
-</table>"
+</table>
+@if (User.IsInRole("Admin") || User.IsInRole("FosterHomeManager"))
+{
+
+    @Html.ActionLink("Add New Foster Home", "Create","FosterHome", null, new { @class = "mybtnlog" })
+
+}
+@Html.ActionLink("Children Needing Placement", "Index", "Child", null, new { @class = "mybtnlog" })
+

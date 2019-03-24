@@ -16,7 +16,7 @@ namespace FosterFinder.Models
         public string ChildName { get; set; }
 
         [Required]
-        [Display(Name = "Number of Beds Needed (sibling group?)")]
+        [Display(Name = "Number in sibling group?)")]
         public int BedsNeed { get; set; }
 
         [Required]

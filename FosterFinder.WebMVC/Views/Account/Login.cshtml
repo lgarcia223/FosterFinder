@@ -1,15 +1,17 @@
 ﻿@using FosterFinder.WebMVC.Models
 @model LoginViewModel
 @{
-    ViewBag.Title = "Log in";
-}
+    /**/
 
-<h1>@ViewBag.Title.</h1>
-<div class="row">
-    <div class="col-md-8">
-        <section id="loginForm">
-            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-            {
+    ViewBag.Title = "Log In";
+}
+@using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+
+    <h1>@ViewBag.Title</h1>
+    <div class="row">
+        <div class="col-md-8">
+            <section id="loginForm">
                 @Html.AntiForgeryToken()
                 @Html.ValidationSummary(true, "", new { @class = "error" })
                 @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "error" })
@@ -36,7 +38,7 @@
                 </div>
                 <div class="form-group">
                     <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" value="Log in" class="mybtnlog" />
+                        <input type="submit" class="mybtnlog" value="Log In" />
                     </div>
                 </div>
 
@@ -44,21 +46,19 @@
                     <a class="redirect" href="Account/Register">Register as a new user</a>
                 </div>
                 @* Enable this once you have account confirmation enabled for password reset functionality
-            <p>
-                @Html.ActionLink("Forgot your password?", "ForgotPassword")
-            </p>*@
-            }
-        </section>
-    </div>
-    @*<div class="col-md-4">
-            <section id="socialLoginForm">
-                @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
+                    <p>
+                        @Html.ActionLink("Forgot your password?", "ForgotPassword")
+                    </p>*@
+                }
             </section>
-        </div>*@
-
-
-</div>
-
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
+        </div>
+        @*<div class="col-md-4">
+                <section id="socialLoginForm">
+                    @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
+                </section>
+            </div>*@
+    </div>
 }
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }

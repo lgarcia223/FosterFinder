@@ -1,8 +1,8 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
-    background-size: cover; 
-    background-image: url('Images/redwaves.jpg')
+    background-size: 100vw 100vh;
+    background-image: url('Images/wall.jpg')
 }
 /* Set padding to keep content from hitting the edges */
 .body-content {
@@ -10,6 +10,7 @@
     padding-right: 15px;
 }
 h1 {
+    text-align: center;
     font-size: 5rem;
     font-family: 'Tangerine', cursive;
     color: lightgoldenrodyellow;
@@ -22,27 +23,28 @@ p {
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .jumbotron {
-    color: lightgoldenrodyellow; text-shadow: 2px -1px 0 black;
-    outline-color: lightgoldenrodyellow;
+    color: lightgoldenrodyellow;
     background-color: transparent;
     font-family: 'Tangerine', cursive;
-    text-align: center;
+    font-size: 10rem;
+    text-shadow: -3px -2px 5px #210400;
+    text-align: left;
     padding-bottom: 5px;
     margin-bottom: 5px;
 }
 .mybtn {
-    background: darkcyan;
+    background-color: #210400;
     color: lightgoldenrodyellow;
     display: inline-block;
     padding: 6px 12px 6px 12px;
     text-decoration: none; text-align:center;
     border-radius: 25pt;
     border: 2px lightgoldenrodyellow solid; 
-    margin: 0 0 0 20vw;
+    margin: 0 0 0 13vw;
     width: 200px;
  }
 .mybtnlog {
-    background: darkcyan;
+    background: #210400;
     color: lightgoldenrodyellow;
     display: inline-block;
     padding: 6px 12px 6px 12px;
@@ -50,7 +52,7 @@ p {
     text-align: center;
     border-radius: 25pt;
     border: 2px lightgoldenrodyellow solid;
-    margin: 0 10vw 0 0vw;
+   margin: 0 0 0 37vw;
     width: 200px;
 }
 .mynav {
@@ -62,21 +64,22 @@ p {
     margin-left: 10px;
 }
 .mynav:hover {
-    color:darkcyan;
+    color: grey;
 }
 .table{
-    color: black;
+    color: #210400;
     background-color: lightgoldenrodyellow;
 }
 .headers{
-    color: darkcyan;
+    color: #210400;
     background-color: lightgoldenrodyellow;
     font-family: Tahoma;
     font-size: 12px;
 
 }
 .links {
-    color: darkcyan;
+    color: #210400;
+    text-decoration: underline;
 }
 li{
     color: lightgoldenrodyellow;

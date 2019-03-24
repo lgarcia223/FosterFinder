@@ -97,9 +97,9 @@
     @using (Html.BeginForm()) {
         @Html.AntiForgeryToken()
 
-    <div class="form-actions no-color">
-        <input type="submit" value="Delete Foster Home" class="mybtn"/> |
-        <a class="mynav" @Html.ActionLink("Back to Foster Home Openings", "Index")></a>
+    <div class="col-md-6" style="margin-top: 20px;">
+        <input type="submit" value="Delete Home Listing" class="mybtn" />
+        <a class="mybtn" @Html.ActionLink("Foster Home Openings", "Index")></a>
     </div>
     }
 </div>

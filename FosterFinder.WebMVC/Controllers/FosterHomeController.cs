@@ -115,7 +115,7 @@ namespace FosterFinder.WebMVC.Controllers
             var service = CreateFosterHomeService();
 
             service.DeleteHome(id);
-            TempData["SaveResult"] = "Your note was deleted";
+            TempData["SaveResult"] = "The foster home was deleted";
 
             return RedirectToAction("Index");
         }

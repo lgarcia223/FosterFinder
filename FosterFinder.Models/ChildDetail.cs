@@ -9,7 +9,8 @@ using System.Threading.Tasks;
 namespace FosterFinder.Models
 {
     public class ChildDetail
-    {
+    {   
+        [Display(Name = "Child ID")]
         public int ChildId { get; set; }
         [Display(Name = "Child's Name")]
         public string ChildName { get; set; }
