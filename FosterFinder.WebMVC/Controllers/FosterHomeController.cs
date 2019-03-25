@@ -9,7 +9,7 @@ using System.Web.Mvc;
 
 namespace FosterFinder.WebMVC.Controllers
 {
-    [Authorize]
+    [Authorize(Roles ="Admin, FosterHomeManager, ChildManager")]
     public class FosterHomeController : Controller
     {
         // GET: FosterHome

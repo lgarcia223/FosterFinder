@@ -1,5 +1,6 @@
 ﻿using FosterFinder.Models;
 using FosterFinder.Services;
+using FosterFinder.Data;
 using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
@@ -11,7 +12,8 @@ namespace FosterFinder.WebMVC.Controllers
 {
     public class ChildController : Controller
     {
-        [Authorize] 
+
+    [Authorize(Roles ="Admin, ChildManager, FosterHomeManager")] 
         // GET: Child
         public ActionResult Index()
         {
@@ -21,6 +23,7 @@ namespace FosterFinder.WebMVC.Controllers
 
             return View(model);
         }
+       
         [Authorize(Roles ="Admin, ChildManager")]
         public ActionResult Create()
         {
@@ -44,7 +47,7 @@ namespace FosterFinder.WebMVC.Controllers
 
             return View(model);
         }
-        [Authorize(Roles = "Admin, ChildManager")]
+        [Authorize(Roles = "Admin, ChildManager, FosterHomeManager")]
         public ActionResult Details(int id)
         {
             var svc = CreateChildService();
