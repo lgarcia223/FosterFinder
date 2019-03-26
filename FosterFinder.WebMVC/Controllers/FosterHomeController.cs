@@ -69,7 +69,8 @@ namespace FosterFinder.WebMVC.Controllers
                     Agency = detail.Agency,
                     CaseworkerName = detail.CaseworkerName,
                     CaseworkerContact = detail.CaseworkerContact,
-                    Comments = detail.Comments
+                    Comments = detail.Comments,
+                    PhotoUrl = detail.PhotoUrl
                 };
                 return View(model);
         }

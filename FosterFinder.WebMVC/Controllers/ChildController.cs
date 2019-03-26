@@ -13,7 +13,7 @@ namespace FosterFinder.WebMVC.Controllers
     public class ChildController : Controller
     {
 
-    [Authorize(Roles ="Admin, ChildManager, FosterHomeManager")] 
+        [Authorize(Roles = "Admin, ChildManager, FosterHomeManager")]
         // GET: Child
         public ActionResult Index()
         {
@@ -23,8 +23,8 @@ namespace FosterFinder.WebMVC.Controllers
 
             return View(model);
         }
-       
-        [Authorize(Roles ="Admin, ChildManager")]
+
+        [Authorize(Roles = "Admin, ChildManager")]
         public ActionResult Create()
         {
             return View();
@@ -47,6 +47,7 @@ namespace FosterFinder.WebMVC.Controllers
 
             return View(model);
         }
+
         [Authorize(Roles = "Admin, ChildManager, FosterHomeManager")]
         public ActionResult Details(int id)
         {
@@ -55,6 +56,7 @@ namespace FosterFinder.WebMVC.Controllers
 
             return View(model);
         }
+
         [Authorize(Roles = "Admin, ChildManager")]
         public ActionResult Edit(int id)
         {
@@ -72,6 +74,7 @@ namespace FosterFinder.WebMVC.Controllers
                     Comments = detail.Comments,
                     CaseworkerName = detail.CaseworkerName,
                     CaseworkerContact = detail.CaseworkerContact,
+                    PhotoUrl = detail.PhotoUrl,
                 };
             return View(model);
         }
@@ -127,9 +130,9 @@ namespace FosterFinder.WebMVC.Controllers
             var service = new ChildService(userId);
             return service;
         }
-        public ActionResult MatchHomes (int id)
+        public ActionResult MatchHomes(int id)
         {
-            var svc =  CreateChildService();
+            var svc = CreateChildService();
             var model = svc.GetHomeMatches(id);
             return View(model);
         }

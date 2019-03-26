@@ -158,6 +158,7 @@ namespace FosterFinder.Services
                          CaseworkerName = e.CaseworkerName,
                          CaseworkerContact = e.CaseworkerContact,
                          Comments = e.Comments,
+                         PhotoUrl = e.PhotoUrl,
                      });
                 return children.ToArray();
             }

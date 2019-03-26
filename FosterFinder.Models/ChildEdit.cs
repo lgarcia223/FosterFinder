@@ -39,7 +39,7 @@ namespace FosterFinder.Models
         [Display(Name = "Case Worker Contact")]
         public string CaseworkerContact { get; set; }
 
-        [Display(Name = "Photo")]
+        [Display(Name = "Photo Url")]
         public string PhotoUrl { get; set; }
 
         [DisplayFormat(DataFormatString = "{mm/dd/yy}")]

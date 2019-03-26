@@ -36,14 +36,14 @@
                         </div>
                     </div>
                 </div>
-                <div class="form-group">
+                <div>
                     <div>
                         <input type="submit" class="mybtnlog" value="Log In" />
                     </div>
                 </div>
 
                 <div>
-                    <a class="redirect" href="Account/Register">Register as a new user</a>
+                    @Html.ActionLink("Register as a New User", "Register", "Account", new {@class="mybtnlog"})
                 </div>
                 @* Enable this once you have account confirmation enabled for password reset functionality
                     <p>

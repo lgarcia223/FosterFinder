@@ -150,7 +150,6 @@ namespace FosterFinder.Services
                         CaseworkerContact = e.CaseworkerContact, 
                         Comments = e.Comments,
                         PhotoUrl = e.PhotoUrl,
-                        ModifiedUtc = e.ModifiedUtc,
                     });
 
                 return homes.ToArray();

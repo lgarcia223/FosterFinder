@@ -77,6 +77,14 @@
     <Compile Include="Migrations\201903212040581_PhotoUrlforChild.Designer.cs">
       <DependentUpon>201903212040581_PhotoUrlforChild.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201903251421308_PhotoUrlPopulateInEdit.cs" />
+    <Compile Include="Migrations\201903251421308_PhotoUrlPopulateInEdit.Designer.cs">
+      <DependentUpon>201903251421308_PhotoUrlPopulateInEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903251442034_FosterHomePhotoUrl.cs" />
+    <Compile Include="Migrations\201903251442034_FosterHomePhotoUrl.Designer.cs">
+      <DependentUpon>201903251442034_FosterHomePhotoUrl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -99,6 +107,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201903212040581_PhotoUrlforChild.resx">
       <DependentUpon>201903212040581_PhotoUrlforChild.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903251421308_PhotoUrlPopulateInEdit.resx">
+      <DependentUpon>201903251421308_PhotoUrlPopulateInEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903251442034_FosterHomePhotoUrl.resx">
+      <DependentUpon>201903251442034_FosterHomePhotoUrl.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
