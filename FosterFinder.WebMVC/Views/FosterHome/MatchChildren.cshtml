@@ -9,6 +9,7 @@
 
 <table class="table">
     <tr>
+        <th>@Html.DisplayNameFor(model => model.PhotoUrl)</th>
         <th>@Html.DisplayNameFor(model => model.ChildName)</th>
         <th>@Html.DisplayNameFor(model => model.ChildAge)</th>
         <th>@Html.DisplayNameFor(model => model.ChildGender)</th>
@@ -16,28 +17,27 @@
         <th>@Html.DisplayNameFor(model => model.CaseworkerName)</th>
         <th>@Html.DisplayNameFor(model => model.CaseworkerContact)</th>
         <th>@Html.DisplayNameFor(model => model.Comments)</th>
-        <th>@Html.DisplayNameFor(model => model.PhotoUrl)</th>
     </tr>
 
     @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                <a href="/Child/Details/?id=@item.ChildId">
-                    <div style="height: 100%; width:100%; text-decoration:underline;">
-                        @Html.DisplayFor(modelItem => item.ChildName)
-                    </div>
-                </a>
-            </td>
-            <td>@Html.DisplayFor(modelItem => item.ChildAge)</td>
-            <td>@Html.DisplayFor(modelItem => item.ChildGender)</td>
-            <td>@Html.DisplayFor(modelItem => item.SchoolDistNeed)</td>
-            <td>@Html.DisplayFor(modelItem => item.CaseworkerName)</td>
-            <td>@Html.DisplayFor(modelItem => item.CaseworkerContact)</td>
-            <td>@Html.DisplayFor(modelItem => item.Comments)</td>
-            <td><img src ="@Html.DisplayFor(modelItem => item.PhotoUrl)"style="width:3rem; height: 3rem;" /></td>
+    <tr>
+        <td><img src="@Html.DisplayFor(modelItem => item.PhotoUrl)" style="width:3rem; height: 3rem;" /></td>
+        <td>
+            <a href="/Child/Details/?id=@item.ChildId">
+                <div style="height: 100%; width:100%; text-decoration:underline;">
+                    @Html.DisplayFor(modelItem => item.ChildName)
+                </div>
+            </a>
+        </td>
+        <td>@Html.DisplayFor(modelItem => item.ChildAge)</td>
+        <td>@Html.DisplayFor(modelItem => item.ChildGender)</td>
+        <td>@Html.DisplayFor(modelItem => item.SchoolDistNeed)</td>
+        <td>@Html.DisplayFor(modelItem => item.CaseworkerName)</td>
+        <td>@Html.DisplayFor(modelItem => item.CaseworkerContact)</td>
+        <td>@Html.DisplayFor(modelItem => item.Comments)</td>
 
-        </tr>
+    </tr>
     }
 </table>
 <div>

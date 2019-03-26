@@ -15,6 +15,12 @@ h1 {
     font-family: 'Tangerine', cursive;
     color: lightgoldenrodyellow;
 }
+.commentsbox {
+    height: 100px;
+    width: 280px;
+    color: #210400;
+    border-radius: 10px;
+}
 h3 {
     color: lightgoldenrodyellow;
 }

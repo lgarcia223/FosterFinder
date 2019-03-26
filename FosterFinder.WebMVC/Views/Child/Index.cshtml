@@ -19,35 +19,35 @@
 
 <table class="table">
     <tr class="headers">
+        <th>@Html.DisplayNameFor(model => model.PhotoUrl)</th>
         <th>@Html.DisplayNameFor(model => model.ChildName)</th>
         <th>@Html.DisplayNameFor(model => model.ChildGender)</th>
         <th>@Html.DisplayNameFor(model => model.ChildAge)</th>
         <th>@Html.DisplayNameFor(model => model.SchoolDistNeed)</th>
         <th>@Html.DisplayNameFor(model => model.Comments)</th>
-        <th>@Html.DisplayNameFor(model => model.PhotoUrl)</th>
     </tr>
 
 
     @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                <a href="/Child/Details/?id=@item.ChildId">
-                        <div style="height: 100%; width: 100%; text-decoration: underline;">
-                            @Html.DisplayFor(modelItem => item.ChildName)
-                        </div>
-                </a>
-            </td>
-            <td>@Html.DisplayFor(modelItem => item.ChildGender)</td>
-            <td>@Html.DisplayFor(modelItem => item.ChildAge)</td>
-            <td>@Html.DisplayFor(modelItem => item.SchoolDistNeed)</td>
-            <td>@Html.DisplayFor(modelItem => item.Comments)</td>
-            <td><img src="@Html.DisplayFor(modelItem => item.PhotoUrl)" style="width:3rem; height: 3rem;" /></td>
-            <td>
-                <i class="fas fa-home" style="color:#bf0940"></i>
-                @Html.ActionLink("Match", "MatchHomes", new { id = item.ChildId }, new { @class = "links" })
-            </td>
-        </tr>
+    <tr>
+        <td><img src="@Html.DisplayFor(modelItem => item.PhotoUrl)" style="width:3rem; height: 3rem;" /></td>
+        <td>
+            <a href="/Child/Details/?id=@item.ChildId">
+                <div style="height: 100%; width: 100%; text-decoration: underline;">
+                    @Html.DisplayFor(modelItem => item.ChildName)
+                </div>
+            </a>
+        </td>
+        <td>@Html.DisplayFor(modelItem => item.ChildGender)</td>
+        <td>@Html.DisplayFor(modelItem => item.ChildAge)</td>
+        <td>@Html.DisplayFor(modelItem => item.SchoolDistNeed)</td>
+        <td>@Html.DisplayFor(modelItem => item.Comments)</td>
+        <td>
+            <i class="fas fa-home" style="color:#bf0940"></i>
+            @Html.ActionLink("Match", "MatchHomes", new { id = item.ChildId }, new { @class = "links" })
+        </td>
+    </tr>
     }
 </table>
 @if (User.IsInRole("Admin") || User.IsInRole("ChildManager"))

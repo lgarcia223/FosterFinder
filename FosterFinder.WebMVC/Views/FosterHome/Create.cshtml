@@ -31,8 +31,10 @@
             <div class="form-group">
                 <div class="col-md-6">
                     @Html.LabelFor(model => model.GenderPref, htmlAttributes: new { @class = "control-label col-md-4" })
-                    @Html.EnumDropDownListFor(model => model.GenderPref, htmlAttributes: new { @class = "form-control" })
-                    @Html.ValidationMessageFor(model => model.GenderPref, "", new { @class = "text-danger" })
+                    <div style="color:#210400;">
+                        @Html.EnumDropDownListFor(model => model.GenderPref, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.GenderPref, "", new { @class = "text-danger" })
+                    </div>
                 </div>
                 <div class="col-md-6">
                     @Html.LabelFor(model => model.SchoolDistrict, htmlAttributes: new { @class = "control-label col-md-4" })
@@ -86,7 +88,7 @@
                 </div>
                 <div class="col-md-6">
                     @Html.LabelFor(model => model.Comments, htmlAttributes: new { @class = "control-label col-md-4" })
-                    @Html.EditorFor(model => model.Comments, new { htmlAttributes = new { @class = "form-control", style = "height: 80px;" } })
+                    @Html.TextAreaFor(model => model.Comments, new { @class = "commentsbox" })
                     @Html.ValidationMessageFor(model => model.Comments, "", new { @class = "text-danger" })
                 </div>
             </div>
