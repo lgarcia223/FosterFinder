@@ -13,7 +13,10 @@ using FosterFinder.Data;
 
 namespace FosterFinder.WebMVC.Controllers
 {
+#if !DEBUG
+     [RequireHttps]
 
+#endif
     [Authorize]
     public class AccountController : Controller
     {
@@ -69,7 +72,7 @@ namespace FosterFinder.WebMVC.Controllers
         // POST: /Account/Login
         [HttpPost]
         [AllowAnonymous]
-        [ValidateAntiForgeryToken]
+ 
         public async Task<ActionResult> Login(LoginViewModel model, string returnUrl)
         {
             if (!ModelState.IsValid)
